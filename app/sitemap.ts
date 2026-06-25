@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://intheloop-landing.vercel.app";
+const SITE_URL = "https://intheloop.space";
 const LAST_MODIFIED = "2026-06-25";
 
 export default function sitemap(): MetadataRoute.Sitemap {

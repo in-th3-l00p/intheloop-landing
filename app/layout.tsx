@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, JetBrains_Mono, UnifrakturCook } from "next/font/google";
 import "./globals.css";
 
-const SITE_URL = "https://intheloop-landing.vercel.app";
+const SITE_URL = "https://intheloop.space";
 const SITE_NAME = "intheloop";
 const TAGLINE = "Software at the edge of research and craft";
 const DESCRIPTION =

@@ -6,6 +6,8 @@ old-money serif meets monospaced marginalia.
 
 > Software at the edge of *research* and *craft*.
 
+**Live:** [intheloop.space](https://intheloop.space) · deployed on Vercel (auto-deploys on push to `main`).
+
 ## Pages
 
 | Route          | Source design                       | Contents |

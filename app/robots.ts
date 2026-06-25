@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://intheloop-landing.vercel.app";
+const SITE_URL = "https://intheloop.space";
 
 export default function robots(): MetadataRoute.Robots {
   return {
