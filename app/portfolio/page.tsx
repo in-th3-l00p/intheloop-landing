@@ -6,6 +6,7 @@ import { MONO, BLACKLETTER } from "@/components/tokens";
 
 export const metadata: Metadata = {
   title: "intheloop — Selected work",
+  alternates: { canonical: "/portfolio" },
   description:
     "A working index of the studio's practice — distributed systems, applied research, interface craft and the quiet tooling in between.",
 };

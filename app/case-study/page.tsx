@@ -6,6 +6,7 @@ import { MONO, BLACKLETTER } from "@/components/tokens";
 
 export const metadata: Metadata = {
   title: "intheloop — Case Study № 001 · A coordination layer at planet scale",
+  alternates: { canonical: "/case-study" },
   description:
     "Rebuilding the consensus and scheduling core beneath a globally distributed product — without a moment of downtime.",
 };

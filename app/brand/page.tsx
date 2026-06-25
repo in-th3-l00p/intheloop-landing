@@ -5,6 +5,7 @@ import { MONO, BLACKLETTER } from "@/components/tokens";
 
 export const metadata: Metadata = {
   title: "intheloop — Brand Book · Vol. 01",
+  alternates: { canonical: "/brand" },
   description:
     "A reference for the marks, type, colour and voice of intheloop — an independent software research & development studio.",
 };

@@ -5,6 +5,7 @@ import { MONO, BLACKLETTER } from "@/components/tokens";
 
 export const metadata: Metadata = {
   title: "intheloop — Logo studies · MMXXVI",
+  alternates: { canonical: "/logo" },
   description: "Six marks for intheloop. The name is the idea — a closed loop.",
 };
 
