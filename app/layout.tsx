@@ -25,9 +25,12 @@ const unifraktur = UnifrakturCook({
 });
 
 export const metadata: Metadata = {
-  title: "intheloop — Case Study № 001 · A coordination layer at planet scale",
+  title: {
+    default: "intheloop — Software at the edge of research and craft",
+    template: "%s",
+  },
   description:
-    "Rebuilding the consensus and scheduling core beneath a globally distributed product — without a moment of downtime.",
+    "intheloop is an independent studio for software development, research, consulting, and creative work — sitting between what is known and what comes next.",
 };
 
 export default function RootLayout({

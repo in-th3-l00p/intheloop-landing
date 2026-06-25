@@ -3,13 +3,14 @@
 import { useEffect } from "react";
 
 /**
- * Ports the original design's mount script:
- *  - staggered reveal of [data-reveal] elements via IntersectionObserver
- *  - scroll progress bar driven by [data-progress]
+ * Ports the design's mount script, shared across every page:
+ *  - staggered blur/translate reveal of [data-reveal] via IntersectionObserver
+ *  - scroll-progress bar driven by [data-progress]
+ *  - parallax on [data-parallax] (value = strength) — only active where present
  */
 export default function ScrollEffects() {
   useEffect(() => {
-    const raf = requestAnimationFrame(init);
+    const frame = requestAnimationFrame(init);
 
     let io: IntersectionObserver | null = null;
     let onScroll: (() => void) | null = null;
@@ -43,14 +44,23 @@ export default function ScrollEffects() {
       );
       reveals.forEach((el) => io?.observe(el));
 
+      const px = [...document.querySelectorAll<HTMLElement>("[data-parallax]")];
       const bar = document.querySelector<HTMLElement>("[data-progress]");
+
       const apply = () => {
-        if (!bar) return;
-        const doc = document.documentElement;
         const vh = window.innerHeight;
-        const max = doc.scrollHeight - vh || 1;
-        const pct = Math.min(100, Math.max(0, (window.scrollY / max) * 100));
-        bar.style.width = pct.toFixed(2) + "%";
+        for (const el of px) {
+          const r = el.getBoundingClientRect();
+          const off = r.top + r.height / 2 - vh / 2;
+          const sp = parseFloat(el.getAttribute("data-parallax") || "0") || 0;
+          el.style.transform = `translateY(${(-off * sp).toFixed(1)}px)`;
+        }
+        if (bar) {
+          const doc = document.documentElement;
+          const max = doc.scrollHeight - vh || 1;
+          const pct = Math.min(100, Math.max(0, (window.scrollY / max) * 100));
+          bar.style.width = pct.toFixed(2) + "%";
+        }
       };
 
       onScroll = () => {
@@ -66,7 +76,7 @@ export default function ScrollEffects() {
     }
 
     return () => {
-      cancelAnimationFrame(raf);
+      cancelAnimationFrame(frame);
       if (rafId) cancelAnimationFrame(rafId);
       io?.disconnect();
       if (onScroll) {
