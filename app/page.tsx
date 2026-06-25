@@ -20,7 +20,7 @@ export default function LandingPage() {
       <div style={{ position: "relative", width: "100%", height: "100vh", minHeight: 680, display: "flex", alignItems: "flex-end", overflow: "hidden" }}>
         {/* full-bleed background field (parallax outer, ken-burns inner) */}
         <div data-parallax="0.05" style={{ position: "absolute", inset: 0 }}>
-          <div style={{ position: "absolute", left: "-5%", top: "-7%", width: "110%", height: "120%", background: "#0e0a14 url('/uploads/hero.svg') center/cover no-repeat", animation: "kenburns 38s ease-in-out infinite alternate" }} />
+          <div style={{ position: "absolute", left: "-5%", top: "-7%", width: "110%", height: "120%", background: "#0e0a14 url('/uploads/hero.png') center/cover no-repeat", animation: "kenburns 38s ease-in-out infinite alternate" }} />
         </div>
         {/* blend washes */}
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top,#0e0a14 6%,rgba(14,10,20,.74) 42%,rgba(14,10,20,.64) 72%,rgba(14,10,20,.82))" }} />
@@ -118,7 +118,7 @@ export default function LandingPage() {
 
       {/* statement band — galaxy background */}
       <div style={{ position: "relative", margin: "80px 0", borderTop: "1px solid rgba(233,226,211,.15)", borderBottom: "1px solid rgba(233,226,211,.15)", overflow: "hidden" }}>
-        <div data-parallax="0.08" style={{ position: "absolute", left: "-5%", top: "-18%", width: "110%", height: "136%", background: "#0e0a14 url('/uploads/galaxy.svg') center/cover no-repeat", animation: "kenburns 50s ease-in-out infinite alternate" }} />
+        <div data-parallax="0.08" style={{ position: "absolute", left: "-5%", top: "-18%", width: "110%", height: "136%", background: "#0e0a14 url('/uploads/galaxy.png') center/cover no-repeat", animation: "kenburns 50s ease-in-out infinite alternate" }} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(95% 130% at 50% 50%,rgba(14,10,20,.18),rgba(14,10,20,.74))" }} />
         <div data-reveal="" style={{ position: "relative", padding: "118px 40px", maxWidth: 1320, margin: "0 auto", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "24px 52px" }}>
           <span style={{ fontFamily: BLACKLETTER, fontSize: 88, color: "#c4a9e0", lineHeight: ".8" }}>A</span>

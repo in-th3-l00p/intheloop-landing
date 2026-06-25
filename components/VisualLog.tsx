@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { MONO } from "./tokens";
 
-const SRC = "/assets/visual-log.svg";
+const SRC = "/assets/visual-log.png";
 
 // 8 plates: a 2×2 hero plate (top-left) followed by single cells, matching the
 // design's poly-grid. One image is sliced across all cells so they read as a
@@ -28,8 +28,8 @@ export default function VisualLog() {
     const layout = () => {
       const gw = grid.clientWidth;
       const gh = grid.clientHeight;
-      const iw = img.naturalWidth || 1600;
-      const ih = img.naturalHeight || 800;
+      const iw = img.naturalWidth || 1774;
+      const ih = img.naturalHeight || 887;
       const scale = Math.max(gw / iw, gh / ih); // cover
       const bw = iw * scale;
       const bh = ih * scale;

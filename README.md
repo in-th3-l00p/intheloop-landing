@@ -36,12 +36,10 @@ old-money serif meets monospaced marginalia.
 
 ## Assets
 
-- `public/assets/` — brand marks. SVGs are the originals from the design project; the
-  PNG variants (used by the Brand Book download buttons) are rendered from those SVGs.
-- `public/uploads/hero.svg`, `galaxy.svg` and `public/assets/visual-log.svg` are
-  **procedural** starfield/film-field stand-ins for the design's large binary photo
-  uploads. Drop the real images in at the same paths (or `.png`, updating the references)
-  to swap them in.
+- `public/assets/` — brand marks (SVG + PNG), the originals from the design project.
+- `public/uploads/hero.png`, `public/uploads/galaxy.png` and `public/assets/visual-log.png`
+  are the original photographic uploads from the design project: the hero film-still, the
+  galaxy statement-band field, and the wide field sliced across the visual-log grid.
 
 ## Develop
 
