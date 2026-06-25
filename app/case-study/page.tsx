@@ -3,6 +3,8 @@ import Link from "next/link";
 import Frame from "@/components/Frame";
 import TopBar from "@/components/TopBar";
 import { MONO, BLACKLETTER } from "@/components/tokens";
+import { reader } from "@/lib/reader";
+import { accent } from "@/lib/accent";
 
 export const metadata: Metadata = {
   title: "intheloop — Case Study № 001 · A coordination layer at planet scale",
@@ -11,7 +13,19 @@ export const metadata: Metadata = {
     "Rebuilding the consensus and scheduling core beneath a globally distributed product — without a moment of downtime.",
 };
 
-export default function CaseStudyPage() {
+export default async function CaseStudyPage() {
+  const [cs, settings] = await Promise.all([
+    reader.singletons.caseStudy.readOrThrow(),
+    reader.singletons.settings.readOrThrow(),
+  ]);
+
+  const meta: [string, string][] = [
+    ["Client", cs.client],
+    ["Year", cs.year],
+    ["Role", cs.role],
+    ["Duration", cs.duration],
+  ];
+
   return (
     <Frame>
       <TopBar
@@ -29,24 +43,18 @@ export default function CaseStudyPage() {
         </div>
         <div data-reveal="" style={{ position: "relative", fontFamily: MONO, fontSize: 11, letterSpacing: ".24em", textTransform: "uppercase", color: "#b3a6bf", display: "flex", gap: 16, alignItems: "center" }}>
           <span style={{ width: 46, height: 1, background: "#a585cf", display: "inline-block" }} />
-          Case Study &nbsp;/&nbsp; № 001 — Infrastructure
+          {cs.eyebrow}
         </div>
         <h1 data-reveal="" style={{ position: "relative", fontWeight: 400, fontSize: "clamp(48px,8vw,116px)", lineHeight: ".96", letterSpacing: "-.02em", marginTop: 26, maxWidth: "16ch" }}>
-          A coordination layer at{" "}
-          <em style={{ fontStyle: "italic", fontWeight: 400, color: "#c4a9e0" }}>planet</em> scale.
+          {accent(cs.heading)}
         </h1>
         <p data-reveal="" style={{ position: "relative", fontSize: "clamp(20px,2.2vw,28px)", lineHeight: 1.5, color: "#d7cee0", maxWidth: "40ch", marginTop: 30, fontStyle: "italic" }}>
-          Rebuilding the consensus and scheduling core beneath a globally distributed product — without a moment of downtime.
+          {cs.subtitle}
         </p>
 
         {/* meta grid */}
         <div data-reveal="" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 1, marginTop: 64, borderTop: "1px solid rgba(233,226,211,.15)", fontFamily: MONO }}>
-          {[
-            ["Client", "Confidential · Infrastructure"],
-            ["Year", "2025 — 2026"],
-            ["Role", "Research · Engineering"],
-            ["Duration", "18 months"],
-          ].map(([label, value]) => (
+          {meta.map(([label, value]) => (
             <div key={label} style={{ padding: "22px 0", borderBottom: "1px solid rgba(233,226,211,.12)" }}>
               <div style={{ fontSize: 10, letterSpacing: ".16em", textTransform: "uppercase", color: "#82749a", marginBottom: 9 }}>{label}</div>
               <div style={{ fontSize: 14, color: "#e9e2d3" }}>{value}</div>
@@ -76,41 +84,32 @@ export default function CaseStudyPage() {
       </div>
 
       {/* OVERVIEW */}
-      <div style={{ padding: "104px 40px 0", maxWidth: 1320, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 48 }}>
-          <div data-reveal="" style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#9a8ea4" }}>
-            <span style={{ color: "#a585cf" }}>01</span>
-            <br />Overview
-          </div>
-          <div style={{ maxWidth: "64ch" }}>
-            <p data-reveal="" style={{ fontSize: "clamp(20px,2vw,26px)", lineHeight: 1.6, color: "#e9e2d3" }}>The client operated a product depended on across eleven regions, coordinated by a scheduling core that had grown faster than anyone had intended. It worked — until the day it almost didn&apos;t.</p>
-            <p data-reveal="" style={{ fontSize: 18, lineHeight: 1.85, color: "#c2b7cd", marginTop: 26 }}>Over eighteen months we worked alongside their infrastructure team to rebuild that core from first principles: a consensus and scheduling layer that could be reasoned about precisely, tested deterministically, and operated by a small on-call rotation rather than a war room. The work touched everything from the replication protocol to the dashboards engineers stared at in the dark.</p>
-            <p data-reveal="" style={{ fontSize: 18, lineHeight: 1.85, color: "#c2b7cd", marginTop: 22 }}>We did not set out to build the largest system — only the one that could be understood end to end by the people responsible for it. Every decision was weighed against a single question: when this fails at three in the morning, will the answer be obvious?</p>
-          </div>
-        </div>
-      </div>
+      <Section number="01" label="Overview">
+        {cs.overview.map((para, i) => (
+          <p key={i} data-reveal="" style={i === 0
+            ? { fontSize: "clamp(20px,2vw,26px)", lineHeight: 1.6, color: "#e9e2d3" }
+            : { fontSize: 18, lineHeight: 1.85, color: "#c2b7cd", marginTop: i === 1 ? 26 : 22 }}>
+            {para}
+          </p>
+        ))}
+      </Section>
 
       {/* PULL QUOTE */}
       <div style={{ padding: "96px 40px", maxWidth: 1320, margin: "0 auto" }}>
         <blockquote data-reveal="" style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-start", gap: "24px 40px", borderTop: "1px solid rgba(233,226,211,.15)", borderBottom: "1px solid rgba(233,226,211,.15)", padding: "72px 0" }}>
           <span style={{ fontFamily: BLACKLETTER, fontSize: 88, color: "#c4a9e0", lineHeight: ".7" }}>&ldquo;</span>
-          <div style={{ fontSize: "clamp(26px,3.2vw,46px)", fontStyle: "italic", fontWeight: 400, lineHeight: 1.32, letterSpacing: "-.005em", maxWidth: "24ch", color: "#e9e2d3" }}>The hardest systems are not the fast ones. They are the ones a tired human can still trust.</div>
+          <div style={{ fontSize: "clamp(26px,3.2vw,46px)", fontStyle: "italic", fontWeight: 400, lineHeight: 1.32, letterSpacing: "-.005em", maxWidth: "24ch", color: "#e9e2d3" }}>{cs.quote}</div>
         </blockquote>
       </div>
 
       {/* CHALLENGE */}
-      <div style={{ padding: "0 40px", maxWidth: 1320, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 48 }}>
-          <div data-reveal="" style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#9a8ea4" }}>
-            <span style={{ color: "#a585cf" }}>02</span>
-            <br />The Challenge
-          </div>
-          <div style={{ maxWidth: "64ch" }}>
-            <p data-reveal="" style={{ fontSize: 18, lineHeight: 1.85, color: "#c2b7cd" }}>The original scheduler had been correct for the load it was born into. Five years of growth later, its failure modes had become folklore — known by a handful of engineers, undocumented, and triggered by combinations no one could fully enumerate.</p>
-            <p data-reveal="" style={{ fontSize: 18, lineHeight: 1.85, color: "#c2b7cd", marginTop: 22 }}>Three constraints shaped the work. The system could never go fully offline. The migration had to be reversible at every step. And the result had to be teachable to an engineer in their first week, not their fifth year.</p>
-          </div>
-        </div>
-      </div>
+      <Section number="02" label="The Challenge" topBorder={false}>
+        {cs.challenge.map((para, i) => (
+          <p key={i} data-reveal="" style={{ fontSize: 18, lineHeight: 1.85, color: "#c2b7cd", marginTop: i === 0 ? 0 : 22 }}>
+            {para}
+          </p>
+        ))}
+      </Section>
 
       {/* TWO IMAGE PLACEHOLDERS */}
       <div style={{ padding: "72px 40px 0", maxWidth: 1320, margin: "0 auto" }}>
@@ -124,60 +123,34 @@ export default function CaseStudyPage() {
       </div>
 
       {/* APPROACH */}
-      <div style={{ padding: "104px 40px 0", maxWidth: 1320, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 48 }}>
-          <div data-reveal="" style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#9a8ea4" }}>
-            <span style={{ color: "#a585cf" }}>03</span>
-            <br />Approach
-          </div>
-          <div style={{ maxWidth: "64ch" }}>
-            <p data-reveal="" style={{ fontSize: 18, lineHeight: 1.85, color: "#c2b7cd" }}>We moved in four phases, each one shippable on its own and each one reversible. Nothing was a leap; everything was a step that could be walked back before dawn.</p>
-            <div style={{ marginTop: 34, display: "flex", flexDirection: "column", gap: 1, borderTop: "1px solid rgba(233,226,211,.14)" }}>
-              {[
-                ["01", "Model the system formally", "A specification first, so the failure modes were finite and named before any code changed."],
-                ["02", "Shadow the live path", "The new core ran in parallel, deciding nothing, only proving it agreed with production."],
-                ["03", "Cut over, region by region", "Traffic shifted in slices small enough that a rollback was a footnote, not an incident."],
-                ["04", "Hand it back, legibly", "Runbooks, dashboards and a model the on-call team could hold in their heads."],
-              ].map(([num, title, body]) => (
-                <div key={num} data-reveal="" style={{ display: "grid", gridTemplateColumns: "54px 1fr", gap: 20, padding: "24px 0", borderBottom: "1px solid rgba(233,226,211,.12)" }}>
-                  <div style={{ fontFamily: MONO, fontSize: 12, color: "#a585cf" }}>{num}</div>
-                  <div>
-                    <div style={{ fontSize: 22 }}>{title}</div>
-                    <div style={{ fontSize: 16, lineHeight: 1.7, color: "#9a8ea4", marginTop: 6 }}>{body}</div>
-                  </div>
-                </div>
-              ))}
+      <Section number="03" label="Approach">
+        <p data-reveal="" style={{ fontSize: 18, lineHeight: 1.85, color: "#c2b7cd" }}>{cs.approachIntro}</p>
+        <div style={{ marginTop: 34, display: "flex", flexDirection: "column", gap: 1, borderTop: "1px solid rgba(233,226,211,.14)" }}>
+          {cs.approach.map((step) => (
+            <div key={step.number} data-reveal="" style={{ display: "grid", gridTemplateColumns: "54px 1fr", gap: 20, padding: "24px 0", borderBottom: "1px solid rgba(233,226,211,.12)" }}>
+              <div style={{ fontFamily: MONO, fontSize: 12, color: "#a585cf" }}>{step.number}</div>
+              <div>
+                <div style={{ fontSize: 22 }}>{step.title}</div>
+                <div style={{ fontSize: 16, lineHeight: 1.7, color: "#9a8ea4", marginTop: 6 }}>{step.body}</div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
-      </div>
+      </Section>
 
       {/* OUTCOME */}
-      <div style={{ padding: "104px 40px 0", maxWidth: 1320, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 48 }}>
-          <div data-reveal="" style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#9a8ea4" }}>
-            <span style={{ color: "#a585cf" }}>04</span>
-            <br />Outcome
-          </div>
-          <div style={{ maxWidth: "64ch" }}>
-            <p data-reveal="" style={{ fontSize: 18, lineHeight: 1.85, color: "#c2b7cd" }}>The cutover completed without a single second of planned downtime. More tellingly, the war room never reconvened — incidents that once took a room now take one engineer and a runbook.</p>
-            <div data-reveal="" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 1, marginTop: 44, borderTop: "1px solid rgba(233,226,211,.15)" }}>
-              {[
-                ["99.99%", "Sustained availability"],
-                ["4.2×", "Scheduling throughput"],
-                ["−63%", "Tail latency, p99"],
-                ["11", "Regions, zero rollbacks"],
-              ].map(([stat, label]) => (
-                <div key={label} style={{ padding: "28px 0", borderBottom: "1px solid rgba(233,226,211,.12)" }}>
-                  <div style={{ fontSize: "clamp(40px,5vw,68px)", fontWeight: 400, letterSpacing: "-.02em", color: "#c4a9e0" }}>{stat}</div>
-                  <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".12em", textTransform: "uppercase", color: "#82749a", marginTop: 8 }}>{label}</div>
-                </div>
-              ))}
+      <Section number="04" label="Outcome">
+        <p data-reveal="" style={{ fontSize: 18, lineHeight: 1.85, color: "#c2b7cd" }}>{cs.outcomeIntro}</p>
+        <div data-reveal="" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 1, marginTop: 44, borderTop: "1px solid rgba(233,226,211,.15)" }}>
+          {cs.stats.map((s) => (
+            <div key={s.label} style={{ padding: "28px 0", borderBottom: "1px solid rgba(233,226,211,.12)" }}>
+              <div style={{ fontSize: "clamp(40px,5vw,68px)", fontWeight: 400, letterSpacing: "-.02em", color: "#c4a9e0" }}>{s.value}</div>
+              <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".12em", textTransform: "uppercase", color: "#82749a", marginTop: 8 }}>{s.label}</div>
             </div>
-            <p data-reveal="" style={{ fontSize: 18, lineHeight: 1.85, color: "#c2b7cd", marginTop: 40 }}>A year on, the system is still operated by the team that inherited it — which, for infrastructure that quietly holds up a product, is the only metric that ever truly mattered.</p>
-          </div>
+          ))}
         </div>
-      </div>
+        <p data-reveal="" style={{ fontSize: 18, lineHeight: 1.85, color: "#c2b7cd", marginTop: 40 }}>{cs.outcomeOutro}</p>
+      </Section>
 
       {/* NEXT / FOOTER */}
       <div style={{ position: "relative", padding: "96px 40px 72px", maxWidth: 1320, margin: "96px auto 0", borderTop: "1px solid rgba(233,226,211,.15)" }}>
@@ -196,18 +169,44 @@ export default function CaseStudyPage() {
             </div>
             <div>
               <div style={{ fontSize: "clamp(30px,3.4vw,44px)", fontWeight: 400, letterSpacing: "-.015em", lineHeight: 1 }}>Applied ML</div>
-              <div style={{ fontFamily: MONO, fontSize: 12, color: "#b3a6bf", marginTop: 12 }}>Research · 2026 ↗</div>
+              <div style={{ fontFamily: MONO, fontSize: 12, color: "#b3a6bf", marginTop: 12 }}>Research · {cs.year.split("—").pop()?.trim() || cs.year} ↗</div>
             </div>
           </Link>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 64, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#9a8ea4" }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
-            <span><span style={{ color: "#a585cf" }}>[</span>intheloop<span style={{ color: "#a585cf" }}>]</span></span>
-            <span style={{ color: "#82749a" }}>© 2026</span>
+            <span><span style={{ color: "#a585cf" }}>[</span>{settings.studioName}<span style={{ color: "#a585cf" }}>]</span></span>
+            <span style={{ color: "#82749a" }}>© {settings.copyrightYear}</span>
           </span>
-          <span>Software Research &amp; Development</span>
+          <span>{settings.footerTagline}</span>
         </div>
       </div>
     </Frame>
+  );
+}
+
+// Shared two-column section scaffold (mono index label + body column)
+function Section({
+  number,
+  label,
+  topBorder = true,
+  children,
+}: {
+  number: string;
+  label: string;
+  topBorder?: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <div style={{ padding: topBorder ? "104px 40px 0" : "0 40px", maxWidth: 1320, margin: "0 auto" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 48 }}>
+        <div data-reveal="" style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#9a8ea4" }}>
+          <span style={{ color: "#a585cf" }}>{number}</span>
+          <br />
+          {label}
+        </div>
+        <div style={{ maxWidth: "64ch" }}>{children}</div>
+      </div>
+    </div>
   );
 }

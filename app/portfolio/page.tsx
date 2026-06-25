@@ -3,6 +3,7 @@ import Link from "next/link";
 import Frame from "@/components/Frame";
 import TopBar from "@/components/TopBar";
 import { MONO, BLACKLETTER } from "@/components/tokens";
+import { reader } from "@/lib/reader";
 
 export const metadata: Metadata = {
   title: "intheloop — Selected work",
@@ -11,16 +12,16 @@ export const metadata: Metadata = {
     "A working index of the studio's practice — distributed systems, applied research, interface craft and the quiet tooling in between.",
 };
 
-const PROJECTS = [
-  { n: "01", t: "Distributed Systems", k: "infrastructure" },
-  { n: "02", t: "Applied Machine Learning", k: "research" },
-  { n: "03", t: "Interface Craft", k: "creative" },
-  { n: "04", t: "Protocol Design", k: "r&d" },
-  { n: "05", t: "Technical Advisory", k: "consulting" },
-  { n: "06", t: "Internal Tooling", k: "development" },
-];
+export default async function PortfolioPage() {
+  const [projectEntries, settings] = await Promise.all([
+    reader.collections.projects.all(),
+    reader.singletons.settings.readOrThrow(),
+  ]);
+  const projects = projectEntries
+    .map((p) => p.entry)
+    .sort((a, b) => a.number.localeCompare(b.number));
+  const workCount = String(projects.length).padStart(2, "0");
 
-export default function PortfolioPage() {
   return (
     <Frame>
       <TopBar crumbs={[{ label: "Home", href: "/" }, { label: "Portfolio" }]} />
@@ -46,24 +47,24 @@ export default function PortfolioPage() {
       <div style={{ padding: "24px 40px 40px", maxWidth: 1320, margin: "0 auto" }}>
         <div data-reveal="" style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#9a8ea4", borderBottom: "1px solid rgba(233,226,211,.15)", paddingBottom: 14 }}>
           <span><span style={{ color: "#a585cf" }}>❦</span> Index</span>
-          <span>06 works — 2026</span>
+          <span>{workCount} works — {settings.copyrightYear}</span>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "38px 28px", marginTop: 42 }}>
-          {PROJECTS.map((p) => (
-            <Link key={p.n} href="/case-study" data-reveal="" className="il-project" style={{ display: "block", textDecoration: "none", color: "inherit" }}>
+          {projects.map((p) => (
+            <Link key={p.number} href="/case-study" data-reveal="" className="il-project" style={{ display: "block", textDecoration: "none", color: "inherit" }}>
               <div style={{ position: "relative", aspectRatio: "4/5", overflow: "hidden", border: "1px solid rgba(233,226,211,.16)", background: "#15101c" }}>
                 <div className="il-projimg" style={{ width: "100%", height: "100%", backgroundImage: "repeating-linear-gradient(135deg,#1d1528 0 9px,#150e1f 9px 18px)", position: "relative" }}>
                   <span style={{ position: "absolute", top: 12, left: 12, width: 11, height: 11, borderLeft: "1px solid rgba(233,226,211,.42)", borderTop: "1px solid rgba(233,226,211,.42)" }} />
                   <span style={{ position: "absolute", bottom: 12, right: 12, width: 11, height: 11, borderRight: "1px solid rgba(233,226,211,.42)", borderBottom: "1px solid rgba(233,226,211,.42)" }} />
                   <span style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, color: "#6a5b7d" }}>＋</span>
-                  <span style={{ position: "absolute", left: 13, bottom: 12, fontFamily: MONO, fontSize: 10, letterSpacing: ".1em", textTransform: "uppercase", color: "#82749a" }}>img / {p.k}</span>
+                  <span style={{ position: "absolute", left: 13, bottom: 12, fontFamily: MONO, fontSize: 10, letterSpacing: ".1em", textTransform: "uppercase", color: "#82749a" }}>img / {p.kind}</span>
                 </div>
               </div>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginTop: 15 }}>
-                <div style={{ fontSize: 27, fontWeight: 500, letterSpacing: "-.005em" }}>{p.t}</div>
-                <div style={{ fontFamily: MONO, fontSize: 11, color: "#a585cf" }}>{p.n}</div>
+                <div style={{ fontSize: 27, fontWeight: 500, letterSpacing: "-.005em" }}>{p.title}</div>
+                <div style={{ fontFamily: MONO, fontSize: 11, color: "#a585cf" }}>{p.number}</div>
               </div>
-              <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".08em", textTransform: "uppercase", color: "#9a8ea4", marginTop: 4 }}>{p.k}</div>
+              <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".08em", textTransform: "uppercase", color: "#9a8ea4", marginTop: 4 }}>{p.kind}</div>
             </Link>
           ))}
         </div>
@@ -80,10 +81,10 @@ export default function PortfolioPage() {
         </Link>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 64, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#9a8ea4" }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
-            <span><span style={{ color: "#a585cf" }}>[</span>intheloop<span style={{ color: "#a585cf" }}>]</span></span>
-            <span style={{ color: "#82749a" }}>© 2026</span>
+            <span><span style={{ color: "#a585cf" }}>[</span>{settings.studioName}<span style={{ color: "#a585cf" }}>]</span></span>
+            <span style={{ color: "#82749a" }}>© {settings.copyrightYear}</span>
           </span>
-          <span>Software Research &amp; Development</span>
+          <span>{settings.footerTagline}</span>
         </div>
       </div>
     </Frame>

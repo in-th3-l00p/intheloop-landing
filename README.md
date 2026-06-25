@@ -18,9 +18,38 @@ old-money serif meets monospaced marginalia.
 | `/brand`       | intheloop Brand Book.dc.html        | Logo, type, colour, voice, motifs + downloadable marks |
 | `/logo`        | intheloop Logo.dc.html              | Six logo studies + primary lockup |
 
+## Content (CMS)
+
+The editable content is managed with **[Keystatic](https://keystatic.com)** — a git-based
+CMS built into this app. Content lives as YAML files in `content/`, and the pages read it at
+build time, so the site stays statically prerendered.
+
+- **Admin UI:** `/keystatic` — edit Site settings, the Home page, Projects, and the Case study.
+- **Content model** (`keystatic.config.tsx`):
+  - `content/settings.yaml` — studio name, tagline, SEO description, contact email, location, footer
+  - `content/home.yaml` — hero, about, meta, statement band, contact heading
+  - `content/case-study.yaml` — full case-study write-up (overview, challenge, approach, stats…)
+  - `content/projects/*.yaml` — the portfolio work tiles (one file per project)
+- **Accent convention:** in any heading/statement field, wrap words in `*asterisks*` to render
+  them in the lilac italic accent (e.g. `Software at the edge of *research* and *craft*.`).
+- **Editing locally:** run `npm run dev`, open `/keystatic`, edit, save → writes to the
+  `content/` files. Commit and push to deploy.
+- **Editing live (in the browser):** set the GitHub-App env vars (see *Live editing* below) so the
+  deployed `/keystatic` commits straight to the repo → Vercel redeploys. Until then, production
+  uses local mode (read-only on Vercel).
+- The Brand Book and Logo pages are brand reference and remain in code.
+
+### Live editing (one-time GitHub connection)
+
+`keystatic.config.tsx` switches to GitHub storage when `KEYSTATIC_GITHUB_CLIENT_ID` is set.
+To enable in-browser editing on the live site, run the Keystatic GitHub-App setup (it creates the
+app and gives you four env vars: `KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`,
+`KEYSTATIC_SECRET`, `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG`), then add them in the Vercel project.
+
 ## Stack
 
 - **Next.js 15** (App Router, React 19, TypeScript), statically prerendered.
+- **Keystatic** — git-based CMS; content as YAML in `content/`, read via `lib/reader.ts`.
 - **next/font/google** — Cormorant Garamond (display serif), JetBrains Mono (labels/body),
   UnifrakturCook (blackletter accents).
 - No runtime UI dependencies — styling is inline + a small `globals.css` for hover states
