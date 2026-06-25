@@ -42,11 +42,6 @@ export default function LandingPage() {
             intheloop is an independent studio for software development, research, consulting, and creative work — sitting between what is known and what comes next.
           </p>
         </div>
-        {/* scroll cue */}
-        <div style={{ position: "absolute", bottom: 24, left: "50%", transform: "translateX(-50%)", fontFamily: MONO, fontSize: 9, letterSpacing: ".24em", textTransform: "uppercase", color: "#82749a", display: "flex", flexDirection: "column", alignItems: "center", gap: 9 }}>
-          Scroll
-          <span style={{ width: 1, height: 32, background: "linear-gradient(#a585cf,transparent)", animation: "cue 2.4s ease-in-out infinite" }} />
-        </div>
       </div>
 
       {/* ABOUT */}
