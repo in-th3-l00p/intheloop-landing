@@ -1,9 +1,15 @@
 import { config, fields, singleton, collection } from "@keystatic/core";
 
-// Edits write to local files unless the GitHub App env vars are present — in which case
-// the deployed admin commits straight to the repo (→ Vercel redeploy). This keeps builds
-// green before the one-time GitHub connection, and upgrades to live editing once it's done.
-const storage = process.env.KEYSTATIC_GITHUB_CLIENT_ID
+// Edits write to local files unless the GitHub App is connected — in which case the
+// deployed admin commits straight to the repo (→ Vercel redeploy). This keeps builds green
+// before the one-time GitHub connection, and upgrades to live editing once it's done.
+//
+// IMPORTANT: gate on the NEXT_PUBLIC_ slug, not a server-only secret. This config is shared
+// by the admin UI (client) and the API route (server); both must resolve to the SAME storage
+// kind. A server-only var is undefined in the browser bundle, so the client would fall back to
+// local mode and call /api/keystatic/tree (which the GitHub-mode server doesn't serve → 404,
+// stuck loading). The public slug is inlined into the client bundle, so both agree.
+const storage = process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG
   ? ({
       kind: "github",
       repo: { owner: "in-th3-l00p", name: "intheloop-landing" },
