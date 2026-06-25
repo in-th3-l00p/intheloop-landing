@@ -41,7 +41,10 @@ build time, so the site stays statically prerendered.
 
 ### Live editing (one-time GitHub connection)
 
-`keystatic.config.tsx` switches to GitHub storage when `KEYSTATIC_GITHUB_CLIENT_ID` is set.
+`keystatic.config.tsx` switches to GitHub storage when `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG`
+is set. (It must be the `NEXT_PUBLIC_` var — the config is shared by the admin UI and the API
+route, and both have to resolve to the same storage kind; a server-only var would leave the
+client in local mode and the editor stuck loading.)
 To enable in-browser editing on the live site, run the Keystatic GitHub-App setup (it creates the
 app and gives you four env vars: `KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`,
 `KEYSTATIC_SECRET`, `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG`), then add them in the Vercel project.
