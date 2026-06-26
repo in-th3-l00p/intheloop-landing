@@ -1,21 +1,23 @@
-heroEyebrow: "Software R&D Studio  /  № 001"
-heroHeading: "Software at the edge of *research* and *craft*."
+heroEyebrow: Software R&D - № 001
+heroHeading: at the edge of *research* and *craft*.
 heroSubcopy: >-
   intheloop is an independent studio for software development, research,
-  consulting, and creative work — sitting between what is known and what comes
-  next.
-aboutLabel: "About — The Studio"
-aboutNumber: "№ 002"
-aboutStatement: "We work between disciplines — *engineering*, *research* and *design* — where the most interesting problems tend to live."
+  consulting, and creative work, primarily focused on AI, decentralization, and
+  open source
+aboutLabel: About
+aboutNumber: № 002
+aboutStatement: >-
+  Started out as an organization for publishing *research* and *development* in
+  the sphere of modern tech
 aboutBody: >-
-  intheloop is an independent studio. Every engagement begins with a question and
-  ends with something built — distributed systems, applied research, interfaces,
-  and the quiet tooling in between. We take on a small number of projects at a
-  time, by invitation and referral.
-founded: "2026 · Remote / Worldwide"
+  Founded in 2026, intheloop became a brand and a firm focused on bringing and
+  improving the latest capabilities on software. Open source by heart, we
+  promote the idea of actively giving out to the community, and improving the
+  standards the industry currently have. 
+founded: 2026 · Remote / Worldwide
 practice: |-
-  R&D · Consulting
-  Development · Creative
-engagement: "By invitation & referral"
-bandQuote: "small studio, working quietly on hard problems — by invitation and referral."
-contactHeading: "the world is yours"
+  Research · consulting
+  Development · creative
+engagement: Reach out
+bandQuote: small studio, working quietly on new problems
+contactHeading: the world is yours
