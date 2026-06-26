@@ -4,9 +4,9 @@ import TopBar from "@/components/TopBar";
 import { MONO, BLACKLETTER } from "@/components/tokens";
 
 export const metadata: Metadata = {
-  title: "intheloop — Logo studies · MMXXVI",
+  title: "Logo studies · MMXXVI",
   alternates: { canonical: "/logo" },
-  description: "Six marks for intheloop. The name is the idea — a closed loop.",
+  description: "Six marks for intheloop. The name is the idea: a closed loop.",
 };
 
 export default function LogoPage() {
@@ -20,19 +20,19 @@ export default function LogoPage() {
       <div style={{ position: "relative", maxWidth: 1280, margin: "0 auto", padding: "56px 48px 80px" }}>
         {/* header */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: "1px solid rgba(233,226,211,.15)", paddingBottom: 16, fontFamily: MONO }}>
-          <div style={{ fontSize: 11, letterSpacing: ".2em", textTransform: "uppercase", color: "#9a8ea4" }}><span style={{ color: "#a585cf" }}>❧</span> intheloop — Identity</div>
+          <div style={{ fontSize: 11, letterSpacing: ".2em", textTransform: "uppercase", color: "#9a8ea4" }}><span style={{ color: "#a585cf" }}>❧</span> intheloop · Identity</div>
           <div style={{ fontSize: 11, letterSpacing: ".2em", textTransform: "uppercase", color: "#9a8ea4" }}>Logo studies / MMXXVI</div>
         </div>
         <h1 data-reveal="" style={{ fontWeight: 400, fontSize: "clamp(34px,5vw,64px)", letterSpacing: "-.01em", marginTop: 40, maxWidth: "20ch" }}>
           Six marks for <em style={{ fontStyle: "italic", color: "#c4a9e0" }}>intheloop</em>.
         </h1>
         <p data-reveal="" style={{ fontFamily: MONO, fontSize: 12, lineHeight: 1.8, color: "#9a8ea4", maxWidth: "60ch", marginTop: 18 }}>
-          The name is the idea — a closed loop. Each study reads the loop differently: as orbit, as monogram, as seal, as signal. Pick a direction and I&apos;ll refine it into a full lockup system.
+          The name is the idea: a closed loop. Each study reads the loop differently: as orbit, as monogram, as seal, as signal. Pick a direction and I&apos;ll refine it into a full lockup system.
         </p>
 
         {/* grid of marks */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 22, marginTop: 48 }}>
-          {/* 01 — orbit */}
+          {/* 01 · orbit */}
           <div data-reveal="" style={{ position: "relative", aspectRatio: "1/1", border: "1px solid rgba(233,226,211,.16)", background: "#13101b", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
             <span style={cap}>01 · Orbit</span>
             <div style={{ position: "relative", width: 128, height: 128 }}>
@@ -44,7 +44,7 @@ export default function LogoPage() {
             </div>
           </div>
 
-          {/* 02 — ligature */}
+          {/* 02 · ligature */}
           <div data-reveal="" style={{ position: "relative", aspectRatio: "1/1", border: "1px solid rgba(233,226,211,.16)", background: "#13101b", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10, overflow: "hidden" }}>
             <span style={cap}>02 · Ligature</span>
             <div style={{ fontSize: 46, letterSpacing: "-.02em", color: "#e9e2d3", lineHeight: 1 }}>
@@ -56,7 +56,7 @@ export default function LogoPage() {
             <div style={{ fontFamily: MONO, fontSize: 9, letterSpacing: ".26em", textTransform: "uppercase", color: "#82749a" }}>the loop, drawn</div>
           </div>
 
-          {/* 03 — seal */}
+          {/* 03 · seal */}
           <div data-reveal="" style={{ position: "relative", aspectRatio: "1/1", border: "1px solid rgba(233,226,211,.16)", background: "#13101b", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
             <span style={cap}>03 · Seal</span>
             <div style={{ position: "relative", width: 150, height: 150, borderRadius: "50%", border: "1px solid rgba(196,169,224,.5)", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -68,7 +68,7 @@ export default function LogoPage() {
             </div>
           </div>
 
-          {/* 04 — signal */}
+          {/* 04 · signal */}
           <div data-reveal="" style={{ position: "relative", aspectRatio: "1/1", border: "1px solid rgba(233,226,211,.16)", background: "#13101b", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
             <span style={cap}>04 · Signal</span>
             <div style={{ fontFamily: MONO, fontWeight: 500, fontSize: 22, letterSpacing: "-.01em", color: "#e9e2d3", display: "flex", alignItems: "center", gap: 2 }}>
@@ -76,7 +76,7 @@ export default function LogoPage() {
             </div>
           </div>
 
-          {/* 05 — plate */}
+          {/* 05 · plate */}
           <div data-reveal="" style={{ position: "relative", aspectRatio: "1/1", border: "1px solid rgba(233,226,211,.16)", background: "#13101b", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
             <span style={cap}>05 · Plate</span>
             <div style={{ textAlign: "center" }}>
@@ -87,7 +87,7 @@ export default function LogoPage() {
             </div>
           </div>
 
-          {/* 06 — loop */}
+          {/* 06 · loop */}
           <div data-reveal="" style={{ position: "relative", aspectRatio: "1/1", border: "1px solid rgba(233,226,211,.16)", background: "#13101b", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 18, overflow: "hidden" }}>
             <span style={cap}>06 · Loop</span>
             <div style={{ display: "flex", alignItems: "center" }}>
@@ -108,7 +108,7 @@ export default function LogoPage() {
           </div>
           <div style={{ fontSize: "clamp(40px,7vw,86px)", letterSpacing: "-.02em", color: "#e9e2d3", lineHeight: 1 }}>intheloop</div>
         </div>
-        <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".2em", textTransform: "uppercase", color: "#82749a", marginTop: 16, textAlign: "center" }}>Working primary lockup — orbit mark + wordmark</div>
+        <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".2em", textTransform: "uppercase", color: "#82749a", marginTop: 16, textAlign: "center" }}>Working primary lockup · orbit mark + wordmark</div>
       </div>
     </Frame>
   );

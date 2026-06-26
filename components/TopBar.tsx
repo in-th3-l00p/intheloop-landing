@@ -15,7 +15,7 @@ export default function TopBar({ crumbs }: { crumbs?: Crumb[] }) {
         <Link href="/" style={{ fontSize: 13, letterSpacing: ".04em", fontWeight: 500, display: "flex", alignItems: "center", gap: 11, textDecoration: "none", color: "inherit" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/il-seal.svg" alt="intheloop seal" style={{ width: 30, height: 30, display: "block" }} />
-          intheloop
+          ✧ intheloop ✧
         </Link>
         {crumbs && crumbs.length > 0 && (
           <>

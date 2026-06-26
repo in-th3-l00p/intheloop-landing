@@ -1,23 +1,44 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import Frame from "@/components/Frame";
 import TopBar from "@/components/TopBar";
 import { MONO, BLACKLETTER } from "@/components/tokens";
 import { reader } from "@/lib/reader";
 import { accent } from "@/lib/accent";
 
-export const metadata: Metadata = {
-  title: "intheloop — Case Study № 001 · A coordination layer at planet scale",
-  alternates: { canonical: "/case-study" },
-  description:
-    "Rebuilding the consensus and scheduling core beneath a globally distributed product — without a moment of downtime.",
-};
+type Params = { slug: string };
 
-export default async function CaseStudyPage() {
-  const [cs, settings] = await Promise.all([
-    reader.singletons.caseStudy.readOrThrow(),
+export async function generateStaticParams() {
+  const entries = await reader.collections.caseStudies.list();
+  return entries.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+  const { slug } = await params;
+  const cs = await reader.collections.caseStudies.read(slug);
+  if (!cs) return {};
+  return {
+    title: cs.title,
+    alternates: { canonical: `/case-study/${slug}` },
+    description: (cs.subtitle || "").replace(/\s+/g, " ").trim() || undefined,
+  };
+}
+
+export default async function CaseStudyPage({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const [cs, all, settings] = await Promise.all([
+    reader.collections.caseStudies.read(slug),
+    reader.collections.caseStudies.all(),
     reader.singletons.settings.readOrThrow(),
   ]);
+  if (!cs) notFound();
+
+  const ordered = all
+    .map((c) => ({ slug: c.slug, ...c.entry }))
+    .sort((a, b) => a.number.localeCompare(b.number));
+  const idx = ordered.findIndex((c) => c.slug === slug);
+  const next = ordered.length > 1 ? ordered[(idx + 1) % ordered.length] : null;
 
   const meta: [string, string][] = [
     ["Client", cs.client],
@@ -31,8 +52,8 @@ export default async function CaseStudyPage() {
       <TopBar
         crumbs={[
           { label: "Home", href: "/" },
-          { label: "Portfolio", href: "/portfolio" },
-          { label: "Distributed Systems" },
+          { label: "Portfolio", href: "/portfolio#case-studies" },
+          { label: cs.kind },
         ]}
       />
 
@@ -74,11 +95,11 @@ export default async function CaseStudyPage() {
             <div className="il-play" style={{ width: 92, height: 92, borderRadius: "50%", border: "1px solid rgba(233,226,211,.4)", display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(14,10,20,.35)" }}>
               <span style={{ width: 0, height: 0, borderLeft: "20px solid #c4a9e0", borderTop: "12px solid transparent", borderBottom: "12px solid transparent", marginLeft: 6 }} />
             </div>
-            <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#9a8ea4" }}>video / case film — 03:42</div>
+            <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#9a8ea4" }}>video / case film · 03:42</div>
           </div>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", marginTop: 14, fontFamily: MONO, fontSize: 10, letterSpacing: ".16em", textTransform: "uppercase", color: "#82749a" }}>
-          <span>Fig. 01 — System walkthrough</span>
+          <span>Fig. 01 · System walkthrough</span>
           <span>16 : 9 · drop film here</span>
         </div>
       </div>
@@ -155,21 +176,21 @@ export default async function CaseStudyPage() {
       {/* NEXT / FOOTER */}
       <div style={{ position: "relative", padding: "96px 40px 72px", maxWidth: 1320, margin: "96px auto 0", borderTop: "1px solid rgba(233,226,211,.15)" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
-          <Link href="/portfolio" data-reveal="" className="il-card" style={{ position: "relative", display: "flex", flexDirection: "column", justifyContent: "space-between", textDecoration: "none", color: "inherit", border: "1px solid rgba(233,226,211,.16)", background: "#15101c", overflow: "hidden", padding: "34px 34px 28px", minHeight: 172 }}>
+          <Link href="/portfolio#case-studies" data-reveal="" className="il-card" style={{ position: "relative", display: "flex", flexDirection: "column", justifyContent: "space-between", textDecoration: "none", color: "inherit", border: "1px solid rgba(233,226,211,.16)", background: "#15101c", overflow: "hidden", padding: "34px 34px 28px", minHeight: 172 }}>
             <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".16em", textTransform: "uppercase", color: "#9a8ea4" }}>← Index</div>
             <div>
               <div style={{ fontSize: "clamp(30px,3.4vw,44px)", fontWeight: 400, letterSpacing: "-.015em", lineHeight: 1 }}>All work</div>
               <div style={{ fontFamily: MONO, fontSize: 12, color: "#b3a6bf", marginTop: 12 }}>Back to portfolio</div>
             </div>
           </Link>
-          <Link href="/case-study" data-reveal="" className="il-card" style={{ position: "relative", display: "flex", flexDirection: "column", justifyContent: "space-between", textDecoration: "none", color: "inherit", border: "1px solid rgba(233,226,211,.16)", background: "#15101c", overflow: "hidden", padding: "34px 34px 28px", minHeight: 172 }}>
+          <Link href={next ? `/case-study/${next.slug}` : "/portfolio#articles"} data-reveal="" className="il-card" style={{ position: "relative", display: "flex", flexDirection: "column", justifyContent: "space-between", textDecoration: "none", color: "inherit", border: "1px solid rgba(233,226,211,.16)", background: "#15101c", overflow: "hidden", padding: "34px 34px 28px", minHeight: 172 }}>
             <div style={{ display: "flex", justifyContent: "space-between", fontFamily: MONO, fontSize: 11, letterSpacing: ".16em", textTransform: "uppercase", color: "#9a8ea4" }}>
               <span>Next →</span>
-              <span style={{ color: "#a585cf" }}>02</span>
+              <span style={{ color: "#a585cf" }}>{next ? `№ ${next.number}` : "Writing"}</span>
             </div>
             <div>
-              <div style={{ fontSize: "clamp(30px,3.4vw,44px)", fontWeight: 400, letterSpacing: "-.015em", lineHeight: 1 }}>Applied ML</div>
-              <div style={{ fontFamily: MONO, fontSize: 12, color: "#b3a6bf", marginTop: 12 }}>Research · {cs.year.split("—").pop()?.trim() || cs.year} ↗</div>
+              <div style={{ fontSize: "clamp(30px,3.4vw,44px)", fontWeight: 400, letterSpacing: "-.015em", lineHeight: 1 }}>{next ? next.title : "Articles"}</div>
+              <div style={{ fontFamily: MONO, fontSize: 12, color: "#b3a6bf", marginTop: 12 }}>{next ? `${next.kind} ↗` : "Read the writing ↗"}</div>
             </div>
           </Link>
         </div>

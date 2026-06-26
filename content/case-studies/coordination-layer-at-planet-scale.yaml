@@ -1,17 +1,20 @@
-eyebrow: "Case Study  /  № 001 — Infrastructure"
+title: A coordination layer at planet scale
+number: "01"
+kind: Infrastructure
+eyebrow: "Case Study · № 001 · Infrastructure"
 heading: "A coordination layer at *planet* scale."
 subtitle: >-
   Rebuilding the consensus and scheduling core beneath a globally distributed
-  product — without a moment of downtime.
+  product, without a moment of downtime.
 client: "Confidential · Infrastructure"
-year: "2025 — 2026"
+year: "2025 → 2026"
 role: "Research · Engineering"
 duration: "18 months"
 overview:
   - >-
     The client operated a product depended on across eleven regions, coordinated
     by a scheduling core that had grown faster than anyone had intended. It
-    worked — until the day it almost didn't.
+    worked, until the day it almost didn't.
   - >-
     Over eighteen months we worked alongside their infrastructure team to rebuild
     that core from first principles: a consensus and scheduling layer that could
@@ -19,7 +22,7 @@ overview:
     on-call rotation rather than a war room. The work touched everything from the
     replication protocol to the dashboards engineers stared at in the dark.
   - >-
-    We did not set out to build the largest system — only the one that could be
+    We did not set out to build the largest system, only the one that could be
     understood end to end by the people responsible for it. Every decision was
     weighed against a single question: when this fails at three in the morning,
     will the answer be obvious?
@@ -27,7 +30,7 @@ quote: "The hardest systems are not the fast ones. They are the ones a tired hum
 challenge:
   - >-
     The original scheduler had been correct for the load it was born into. Five
-    years of growth later, its failure modes had become folklore — known by a
+    years of growth later, its failure modes had become folklore: known by a
     handful of engineers, undocumented, and triggered by combinations no one could
     fully enumerate.
   - >-
@@ -52,7 +55,7 @@ approach:
     body: "Runbooks, dashboards and a model the on-call team could hold in their heads."
 outcomeIntro: >-
   The cutover completed without a single second of planned downtime. More
-  tellingly, the war room never reconvened — incidents that once took a room now
+  tellingly, the war room never reconvened: incidents that once took a room now
   take one engineer and a runbook.
 stats:
   - value: "99.99%"
@@ -64,6 +67,6 @@ stats:
   - value: "11"
     label: "Regions, zero rollbacks"
 outcomeOutro: >-
-  A year on, the system is still operated by the team that inherited it — which,
+  A year on, the system is still operated by the team that inherited it, which,
   for infrastructure that quietly holds up a product, is the only metric that ever
   truly mattered.

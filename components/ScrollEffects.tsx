@@ -6,7 +6,7 @@ import { useEffect } from "react";
  * Ports the design's mount script, shared across every page:
  *  - staggered blur/translate reveal of [data-reveal] via IntersectionObserver
  *  - scroll-progress bar driven by [data-progress]
- *  - parallax on [data-parallax] (value = strength) — only active where present
+ *  - parallax on [data-parallax] (value = strength), only active where present
  */
 export default function ScrollEffects() {
   useEffect(() => {

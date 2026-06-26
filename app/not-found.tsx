@@ -5,7 +5,7 @@ import TopBar from "@/components/TopBar";
 import { MONO, BLACKLETTER } from "@/components/tokens";
 
 export const metadata: Metadata = {
-  title: "intheloop — Page not found",
+  title: "Page not found",
   robots: { index: false, follow: true },
 };
 
@@ -21,7 +21,7 @@ export default function NotFound() {
 
         <div data-reveal="" style={{ position: "relative", fontFamily: MONO, fontSize: 11, letterSpacing: ".24em", textTransform: "uppercase", color: "#b3a6bf", display: "flex", gap: 16, alignItems: "center" }}>
           <span style={{ width: 46, height: 1, background: "#a585cf", display: "inline-block" }} />
-          Error &nbsp;/&nbsp; № 404 — Off the index
+          Error &nbsp;/&nbsp; № 404 · Off the index
         </div>
 
         <h1 data-reveal="" style={{ position: "relative", fontWeight: 400, fontSize: "clamp(48px,8vw,116px)", lineHeight: ".96", letterSpacing: "-.02em", marginTop: 26, maxWidth: "16ch" }}>
@@ -29,7 +29,7 @@ export default function NotFound() {
         </h1>
 
         <p data-reveal="" style={{ position: "relative", fontFamily: MONO, fontSize: 13, lineHeight: 1.9, color: "#c2b7cd", maxWidth: "52ch", marginTop: 28 }}>
-          The page you&apos;re looking for has moved, was never built, or never existed. The studio works quietly — sometimes things stay in the dark.
+          The page you&apos;re looking for has moved, was never built, or never existed. The studio works quietly. Sometimes things stay in the dark.
         </p>
 
         <div data-reveal="" style={{ display: "flex", flexWrap: "wrap", gap: 14, marginTop: 44, fontFamily: MONO, fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase" }}>

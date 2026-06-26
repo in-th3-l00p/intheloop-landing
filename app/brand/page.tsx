@@ -4,10 +4,10 @@ import TopBar from "@/components/TopBar";
 import { MONO, BLACKLETTER } from "@/components/tokens";
 
 export const metadata: Metadata = {
-  title: "intheloop — Brand Book · Vol. 01",
+  title: "Brand Book · Vol. 01",
   alternates: { canonical: "/brand" },
   description:
-    "A reference for the marks, type, colour and voice of intheloop — an independent software research & development studio.",
+    "A reference for the marks, type, colour and voice of intheloop, an independent software research & development studio.",
 };
 
 const MARKS = [
@@ -56,7 +56,7 @@ export default function BrandBookPage() {
           The <em style={{ fontStyle: "italic", color: "#c4a9e0" }}>intheloop</em><br />brand book.
         </h1>
         <p style={{ fontFamily: MONO, fontSize: 13, lineHeight: 1.9, color: "#b3a6bf", maxWidth: "56ch", marginTop: 30 }}>
-          A reference for the marks, type, colour and voice of intheloop — an independent software research &amp; development studio. Built quietly, in the dark, until it is ready for light.
+          A reference for the marks, type, colour and voice of intheloop, an independent software research &amp; development studio. Built quietly, in the dark, until it is ready for light.
         </p>
       </div>
 
@@ -75,7 +75,7 @@ export default function BrandBookPage() {
       <div style={{ maxWidth: 1320, margin: "0 auto", padding: "60px 40px" }}>
         {sectionHead("01", "The Mark", "Seal · Monogram")}
         <p style={{ fontSize: "clamp(22px,2.6vw,32px)", fontWeight: 400, lineHeight: 1.4, maxWidth: "30ch", marginTop: 34 }}>
-          The name is the idea — a closed loop. The <em style={{ fontStyle: "italic", color: "#c4a9e0" }}>il</em> monogram, drawn as a serif ligature, sits inside an engraved double ring: a seal for a studio that works by referral.
+          The name is the idea: a closed loop. The <em style={{ fontStyle: "italic", color: "#c4a9e0" }}>il</em> monogram, drawn as a serif ligature, sits inside an engraved double ring: a seal for a studio that works by referral.
         </p>
 
         {/* download cards */}
@@ -139,7 +139,7 @@ export default function BrandBookPage() {
             <span>UnifrakturCook</span><span>Ornament · 700</span>
           </div>
           <div style={{ fontFamily: BLACKLETTER, fontSize: "clamp(46px,7vw,92px)", lineHeight: 1, marginTop: 14, color: "#c4a9e0" }}>intheloop</div>
-          <div style={{ fontFamily: MONO, fontSize: 12, color: "#82749a", marginTop: 18 }}>Ornamental only — drop-initials, watermarks, the № mark. Never set body or whole words at small sizes.</div>
+          <div style={{ fontFamily: MONO, fontSize: 12, color: "#82749a", marginTop: 18 }}>Ornamental only: drop-initials, watermarks, the № mark. Never set body or whole words at small sizes.</div>
         </div>
       </div>
 

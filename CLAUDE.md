@@ -25,19 +25,24 @@ old-money serif meets monospaced marginalia. Tagline: *Software at the edge of r
 
 ## Pages
 
-All under `app/`. Five routes:
+All under `app/`. Routes:
 
-| Route          | File                       | In CMS? | Contents |
-|----------------|----------------------------|---------|----------|
-| `/`            | `app/page.tsx`             | ✅ home + settings + projects | Hero (parallax `/uploads/hero.png` + blackletter "il" watermark), About, Portfolio/Brand portal cards, galaxy statement band (`/uploads/galaxy.png`), sliced visual-log grid, contact |
-| `/portfolio`   | `app/portfolio/page.tsx`   | ✅ projects collection | Selected-work index, tiles link to `/case-study` |
-| `/case-study`  | `app/case-study/page.tsx`  | ✅ caseStudy singleton | Case Study № 001 write-up + outcome stats |
-| `/brand`       | `app/brand/page.tsx`       | ❌ static | Brand book: logo, type, colour, voice, motifs + downloadable marks |
-| `/logo`        | `app/logo/page.tsx`        | ❌ static | Six logo studies + primary lockup |
+| Route                | File                              | In CMS? | Contents |
+|----------------------|-----------------------------------|---------|----------|
+| `/`                  | `app/page.tsx`                     | ✅ home + settings + projects | Hero (parallax `/uploads/hero.png` + blackletter "il" watermark), About, Portfolio/Brand portal cards, galaxy statement band (`/uploads/galaxy.png`), sliced visual-log grid, contact |
+| `/portfolio`         | `app/portfolio/page.tsx`          | ✅ projects + caseStudies + articles collections | Selected-work index with **in-page tabs** (Projects / Case Studies / Articles). Tabs are an island (`components/PortfolioTabs.tsx`); active tab is mirrored to the URL hash (`/portfolio#articles`). All three panels are server-rendered into the DOM (crawlable); the island only toggles visibility. |
+| `/case-study/[slug]` | `app/case-study/[slug]/page.tsx`  | ✅ caseStudies collection | Per-study write-up + outcome stats. `generateStaticParams` over the collection; "Next" card cycles to the next study by `number`. |
+| `/articles/[slug]`   | `app/articles/[slug]/page.tsx`    | ✅ articles collection | Per-article page. Body is a **typed block array** (paragraph / heading / quote / code) rendered by the local `Block` component — no markdown renderer/dependency. Paragraphs & quotes honour the `*asterisk*` lilac accent. |
+| `/brand`             | `app/brand/page.tsx`              | ❌ static | Brand book: logo, type, colour, voice, motifs + downloadable marks |
+| `/logo`              | `app/logo/page.tsx`              | ❌ static | Six logo studies + primary lockup |
 
 `/brand` and `/logo` are **brand reference and intentionally live in code** — not in the CMS.
 
 The hero **scroll indicator was removed** by request — do not reintroduce it.
+
+**Site title / wordmark:** both the browser/SEO title and the visible top-bar wordmark are `✧ intheloop ✧`. The title template (`app/layout.tsx`) is `"%s · ✧ intheloop ✧"`; the home page sets `title: { absolute: "✧ intheloop ✧" }`; the wordmark lives in `components/TopBar.tsx`.
+
+**Punctuation:** the visible copy intentionally avoids em-dashes (`—`). Use the studio separators `·` / `/`, or restructure with commas/colons. Don't reintroduce `—`.
 
 ---
 
@@ -89,8 +94,9 @@ Content is YAML in `content/`, read at **build time** via `lib/reader.ts`
 - **Model** (`keystatic.config.tsx`):
   - `content/settings.yaml` — singleton: studio name, tagline, SEO description, contact, location, footer, copyright year
   - `content/home.yaml` — singleton: hero, about, meta, statement band, contact heading
-  - `content/case-study.yaml` — singleton: full case-study write-up (overview, challenge, approach steps, stats…)
-  - `content/projects/*.yaml` — collection, one file per work tile (`slugField: title`, `format: yaml`)
+  - `content/projects/*.yaml` — collection, one file per work tile (`slugField: title`, `format: yaml`). Optional `summary` + `href` (if `href` set, the tile links there).
+  - `content/case-studies/*.yaml` — collection, one file per case study (`slugField: title`). Full write-up (overview, challenge, approach steps, stats…) plus `number` + `kind` for the index tile. **Was a singleton (`content/case-study.yaml`); converted to a collection.**
+  - `content/articles/*.yaml` — collection, one file per article (`slugField: title`). `number`, `kind`, `date`, `readingTime`, `summary`, and `body` (the typed block array described above).
 - **Accent convention:** in heading/statement fields, wrap words in `*asterisks*` to render them
   in the lilac italic accent. `lib/accent.tsx` does this: `accent(text)` splits on `/(\*[^*]+\*)/g`
   and renders `*word*` as `<em>` in `#c4a9e0`; `lines(text)` turns `\n` into `<br/>`.
@@ -136,7 +142,7 @@ Stored in **Vercel** project env + a **git-ignored `.env`** locally. Never commi
 - `app/layout.tsx` — full `metadata` export (metadataBase, title template, description, openGraph,
   twitter `summary_large_image`, robots, keywords) + `viewport` export (themeColor `#0e0a14`, dark).
 - Per-page `metadata` with `alternates.canonical` (see `app/portfolio/page.tsx`).
-- `app/robots.ts`, `app/sitemap.ts` (5 routes, `LAST_MODIFIED`), `app/manifest.ts`.
+- `app/robots.ts`, `app/sitemap.ts` (async; static routes + every case study & article slug from the reader, `LAST_MODIFIED`), `app/manifest.ts`.
 - `app/not-found.tsx` — branded 404, robots `noindex`.
 - Icons/OG: `app/icon.svg`, `app/apple-icon.png`, `app/opengraph-image.png` (1200×630),
   `app/twitter-image.png`, `public/icon-192.png`, `public/icon-512.png`.

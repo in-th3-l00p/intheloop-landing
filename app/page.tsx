@@ -9,10 +9,8 @@ import { accent, lines } from "@/lib/accent";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await reader.singletons.settings.read();
-  const name = settings?.studioName || "intheloop";
-  const tagline = settings?.tagline || "Software at the edge of research and craft";
   return {
-    title: `${name} — ${tagline}`,
+    title: { absolute: "✧ intheloop ✧" },
     description: settings?.description || undefined,
     alternates: { canonical: "/" },
   };
@@ -33,7 +31,7 @@ export default async function LandingPage() {
     <Frame>
       <TopBar />
 
-      {/* hero — full screen, image-backed */}
+      {/* hero: full screen, image-backed */}
       <div style={{ position: "relative", width: "100%", height: "100vh", minHeight: 680, display: "flex", alignItems: "flex-end", overflow: "hidden" }}>
         <div data-parallax="0.05" style={{ position: "absolute", inset: 0 }}>
           <div style={{ position: "absolute", left: "-5%", top: "-7%", width: "110%", height: "120%", background: "#0e0a14 url('/uploads/hero.png') center/cover no-repeat", animation: "kenburns 38s ease-in-out infinite alternate" }} />
@@ -120,7 +118,7 @@ export default async function LandingPage() {
         </div>
       </div>
 
-      {/* statement band — galaxy background */}
+      {/* statement band: galaxy background */}
       <div style={{ position: "relative", margin: "80px 0", borderTop: "1px solid rgba(233,226,211,.15)", borderBottom: "1px solid rgba(233,226,211,.15)", overflow: "hidden" }}>
         <div data-parallax="0.08" style={{ position: "absolute", left: "-5%", top: "-18%", width: "110%", height: "136%", background: "#0e0a14 url('/uploads/galaxy.png') center/cover no-repeat", animation: "kenburns 50s ease-in-out infinite alternate" }} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(95% 130% at 50% 50%,rgba(14,10,20,.18),rgba(14,10,20,.74))" }} />

@@ -1,6 +1,6 @@
 import { config, fields, singleton, collection } from "@keystatic/core";
 
-// Edits write to local files unless the GitHub App is connected — in which case the
+// Edits write to local files unless the GitHub App is connected, in which case the
 // deployed admin commits straight to the repo (→ Vercel redeploy). This keeps builds green
 // before the one-time GitHub connection, and upgrades to live editing once it's done.
 //
@@ -26,7 +26,7 @@ export default config({
     brand: { name: "intheloop" },
     navigation: {
       Site: ["settings", "home"],
-      Work: ["projects", "caseStudy"],
+      Work: ["projects", "caseStudies", "articles"],
     },
   },
   singletons: {
@@ -58,57 +58,15 @@ export default config({
         heroEyebrow: fields.text({ label: "Hero eyebrow" }),
         heroHeading: fields.text({ label: "Hero heading", multiline: true, description: ACCENT_HINT }),
         heroSubcopy: fields.text({ label: "Hero subcopy", multiline: true }),
-        aboutLabel: fields.text({ label: "About — section label" }),
-        aboutNumber: fields.text({ label: "About — number", defaultValue: "№ 002" }),
-        aboutStatement: fields.text({ label: "About — statement", multiline: true, description: ACCENT_HINT }),
-        aboutBody: fields.text({ label: "About — body", multiline: true }),
-        founded: fields.text({ label: "Meta — founded" }),
-        practice: fields.text({ label: "Meta — practice", multiline: true }),
-        engagement: fields.text({ label: "Meta — engagement" }),
+        aboutLabel: fields.text({ label: "About: section label" }),
+        aboutNumber: fields.text({ label: "About: number", defaultValue: "№ 002" }),
+        aboutStatement: fields.text({ label: "About: statement", multiline: true, description: ACCENT_HINT }),
+        aboutBody: fields.text({ label: "About: body", multiline: true }),
+        founded: fields.text({ label: "Meta: founded" }),
+        practice: fields.text({ label: "Meta: practice", multiline: true }),
+        engagement: fields.text({ label: "Meta: engagement" }),
         bandQuote: fields.text({ label: "Statement band quote", multiline: true, description: ACCENT_HINT }),
         contactHeading: fields.text({ label: "Contact heading", defaultValue: "the world is yours" }),
-      },
-    }),
-
-    caseStudy: singleton({
-      label: "Case study",
-      path: "content/case-study",
-      format: { data: "yaml" },
-      schema: {
-        eyebrow: fields.text({ label: "Eyebrow", defaultValue: "Case Study  /  № 001 — Infrastructure" }),
-        heading: fields.text({ label: "Heading", multiline: true, description: ACCENT_HINT }),
-        subtitle: fields.text({ label: "Subtitle", multiline: true }),
-        client: fields.text({ label: "Meta — client" }),
-        year: fields.text({ label: "Meta — year" }),
-        role: fields.text({ label: "Meta — role" }),
-        duration: fields.text({ label: "Meta — duration" }),
-        overview: fields.array(fields.text({ label: "Paragraph", multiline: true }), {
-          label: "Overview paragraphs",
-          itemLabel: (p) => p.value.slice(0, 48) || "Paragraph",
-        }),
-        quote: fields.text({ label: "Pull quote", multiline: true }),
-        challenge: fields.array(fields.text({ label: "Paragraph", multiline: true }), {
-          label: "Challenge paragraphs",
-          itemLabel: (p) => p.value.slice(0, 48) || "Paragraph",
-        }),
-        approachIntro: fields.text({ label: "Approach — intro", multiline: true }),
-        approach: fields.array(
-          fields.object({
-            number: fields.text({ label: "Number", defaultValue: "01" }),
-            title: fields.text({ label: "Title" }),
-            body: fields.text({ label: "Body", multiline: true }),
-          }),
-          { label: "Approach steps", itemLabel: (p) => `${p.fields.number.value} — ${p.fields.title.value}` }
-        ),
-        outcomeIntro: fields.text({ label: "Outcome — intro", multiline: true }),
-        stats: fields.array(
-          fields.object({
-            value: fields.text({ label: "Value" }),
-            label: fields.text({ label: "Label" }),
-          }),
-          { label: "Outcome stats", itemLabel: (p) => `${p.fields.value.value} — ${p.fields.label.value}` }
-        ),
-        outcomeOutro: fields.text({ label: "Outcome — closing", multiline: true }),
       },
     }),
   },
@@ -124,6 +82,87 @@ export default config({
         number: fields.text({ label: "Number", description: "Order + label, e.g. 01", defaultValue: "01" }),
         title: fields.slug({ name: { label: "Title" } }),
         kind: fields.text({ label: "Kind / category", defaultValue: "infrastructure" }),
+        summary: fields.text({ label: "Summary", multiline: true, description: "Optional one-line note shown under the tile." }),
+        href: fields.text({ label: "Link (optional)", description: "If set, the tile links here. Use a path like /case-study/slug or a full URL." }),
+      },
+    }),
+
+    caseStudies: collection({
+      label: "Case studies",
+      path: "content/case-studies/*",
+      slugField: "title",
+      format: { data: "yaml" },
+      columns: ["number", "title", "kind"],
+      schema: {
+        title: fields.slug({ name: { label: "Title" } }),
+        number: fields.text({ label: "Number", description: "Order + label, e.g. 01", defaultValue: "01" }),
+        kind: fields.text({ label: "Kind / category", defaultValue: "Infrastructure" }),
+        eyebrow: fields.text({ label: "Eyebrow", defaultValue: "Case Study · № 001 · Infrastructure" }),
+        heading: fields.text({ label: "Heading", multiline: true, description: ACCENT_HINT }),
+        subtitle: fields.text({ label: "Subtitle", multiline: true }),
+        client: fields.text({ label: "Meta: client" }),
+        year: fields.text({ label: "Meta: year" }),
+        role: fields.text({ label: "Meta: role" }),
+        duration: fields.text({ label: "Meta: duration" }),
+        overview: fields.array(fields.text({ label: "Paragraph", multiline: true }), {
+          label: "Overview paragraphs",
+          itemLabel: (p) => p.value.slice(0, 48) || "Paragraph",
+        }),
+        quote: fields.text({ label: "Pull quote", multiline: true }),
+        challenge: fields.array(fields.text({ label: "Paragraph", multiline: true }), {
+          label: "Challenge paragraphs",
+          itemLabel: (p) => p.value.slice(0, 48) || "Paragraph",
+        }),
+        approachIntro: fields.text({ label: "Approach: intro", multiline: true }),
+        approach: fields.array(
+          fields.object({
+            number: fields.text({ label: "Number", defaultValue: "01" }),
+            title: fields.text({ label: "Title" }),
+            body: fields.text({ label: "Body", multiline: true }),
+          }),
+          { label: "Approach steps", itemLabel: (p) => `${p.fields.number.value} · ${p.fields.title.value}` }
+        ),
+        outcomeIntro: fields.text({ label: "Outcome: intro", multiline: true }),
+        stats: fields.array(
+          fields.object({
+            value: fields.text({ label: "Value" }),
+            label: fields.text({ label: "Label" }),
+          }),
+          { label: "Outcome stats", itemLabel: (p) => `${p.fields.value.value} · ${p.fields.label.value}` }
+        ),
+        outcomeOutro: fields.text({ label: "Outcome: closing", multiline: true }),
+      },
+    }),
+
+    articles: collection({
+      label: "Articles",
+      path: "content/articles/*",
+      slugField: "title",
+      format: { data: "yaml" },
+      columns: ["number", "title", "kind"],
+      schema: {
+        title: fields.slug({ name: { label: "Title" } }),
+        number: fields.text({ label: "Number", description: "Order + label, e.g. 01", defaultValue: "01" }),
+        kind: fields.text({ label: "Kind / category", defaultValue: "Essay" }),
+        date: fields.date({ label: "Date" }),
+        readingTime: fields.text({ label: "Reading time", description: "e.g. 6 min", defaultValue: "" }),
+        summary: fields.text({ label: "Summary", multiline: true, description: "Shown on the index tile and as the lede." }),
+        body: fields.array(
+          fields.object({
+            type: fields.select({
+              label: "Block",
+              options: [
+                { label: "Paragraph", value: "paragraph" },
+                { label: "Heading", value: "heading" },
+                { label: "Quote", value: "quote" },
+                { label: "Code", value: "code" },
+              ],
+              defaultValue: "paragraph",
+            }),
+            text: fields.text({ label: "Text", multiline: true, description: ACCENT_HINT }),
+          }),
+          { label: "Body", itemLabel: (p) => `${p.fields.type.value}: ${(p.fields.text.value || "").slice(0, 40)}` }
+        ),
       },
     }),
   },

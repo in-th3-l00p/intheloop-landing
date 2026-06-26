@@ -11,7 +11,7 @@ const SRC = "/assets/visual-log.png";
 const CELLS = Array.from({ length: 8 });
 
 /**
- * Visual-log gallery — slices a single image across an 8-cell grid by computing
+ * Visual-log gallery: slices a single image across an 8-cell grid by computing
  * each cell's background offset (cover-fit, no stretch). Ported from the design's
  * _applyBg routine; re-lays out on resize and after the image loads.
  */
