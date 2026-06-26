@@ -70,6 +70,11 @@ export default async function LandingPage() {
             <p data-reveal="" style={{ fontFamily: MONO, fontSize: 13, lineHeight: 2, color: "#c2b7cd", maxWidth: "52ch", marginTop: 30 }}>
               {home.aboutBody}
             </p>
+            <p data-reveal="" style={{ fontFamily: MONO, fontSize: 13, lineHeight: 2, color: "#c2b7cd", maxWidth: "52ch", marginTop: 22 }}>
+              Curious what&apos;s happening intheloop? The{" "}
+              <Link href="/portfolio" className="il-navlink" style={{ color: "#c4a9e0", textDecoration: "none" }}>publishings page</Link>{" "}
+              gathers our case studies and articles, everything we&apos;re thinking through in the open.
+            </p>
           </div>
           <div data-reveal="" style={{ fontFamily: MONO, borderLeft: "1px solid rgba(233,226,211,.15)", paddingLeft: 34, display: "flex", flexDirection: "column", gap: 26 }}>
             <div>
@@ -97,8 +102,8 @@ export default async function LandingPage() {
               <span style={{ color: "#a585cf" }}>{workCount} works</span>
             </div>
             <div>
-              <div style={{ fontSize: "clamp(38px,4.4vw,60px)", fontWeight: 400, letterSpacing: "-.015em", lineHeight: 1 }}>Portfolio</div>
-              <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: ".06em", color: "#b3a6bf", marginTop: 14, display: "flex", alignItems: "center", gap: 10 }}>Selected work, {settings.copyrightYear} <span style={{ color: "#c4a9e0", fontSize: 15 }}>↗</span></div>
+              <div style={{ fontSize: "clamp(38px,4.4vw,60px)", fontWeight: 400, letterSpacing: "-.015em", lineHeight: 1 }}>Publishings</div>
+              <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: ".06em", color: "#b3a6bf", marginTop: 14, display: "flex", alignItems: "center", gap: 10 }}>Projects, case studies &amp; articles <span style={{ color: "#c4a9e0", fontSize: 15 }}>↗</span></div>
             </div>
           </Link>
           <Link href="/brand" data-reveal="" className="il-card" style={{ position: "relative", textDecoration: "none", color: "inherit", border: "1px solid rgba(233,226,211,.16)", background: "#15101c", overflow: "hidden", padding: "40px 38px 34px", minHeight: 262, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
