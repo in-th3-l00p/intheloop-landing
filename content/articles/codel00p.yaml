@@ -1,0 +1,41 @@
+title: codel00p
+number: "01"
+kind: Open Source
+date: "2026-06-28"
+readingTime: 6 min
+summary: "An open-source agentic coding platform built on one idea: a team's project knowledge should *compound* as the team works."
+body:
+  - type: paragraph
+    text: "Most coding agents start every session cold. They relearn the same repository layout, the same conventions, the same deploy steps and the same gotchas, again and again. codel00p is our answer to that waste: an open-source platform that turns real engineering work into durable, reviewed, shareable project memory, so the agent gets *warmer* every time the team uses it."
+  - type: heading
+    text: "The problem"
+  - type: paragraph
+    text: "The knowledge a senior engineer carries in their head rarely reaches the tools. It lives in chat logs and dies there. Every new agent run pays the context tax from scratch, which keeps the agent junior no matter how capable the underlying model is."
+  - type: heading
+    text: "The idea"
+  - type: paragraph
+    text: "The durable advantage in agentic coding is not the model, since everyone rents the same frontier models. It is the *harness*, the *context* and the *memory* around it. codel00p treats project knowledge as a first-class asset: completed work becomes compact memory, covering codebase facts, architecture decisions, workflows, debugging and deploy procedures, that is curated like code (proposed, reviewed, approved), then fed into every future session and shared across the team."
+  - type: quote
+    text: "codel00p turns a team's real work into reviewed, durable, shareable memory, so the coding agent *compounds* in value instead of starting from zero."
+  - type: heading
+    text: "What it does today"
+  - type: paragraph
+    text: "This is running software, not slideware. A Rust agent engine and CLI can inspect and edit a repository, run tests and builds, read git state, prepare PR-ready summaries, resume sessions, stream tokens live and connect to external tools over MCP. Running bare codel00p opens an interactive chat."
+  - type: paragraph
+    text: "Inference is *provider-flexible*. One Rust provider contract spans Anthropic, OpenAI, Azure, AWS Bedrock and Gemini, with native streaming, tool calls, fallback routing and policy, using personal keys or organization-governed ones."
+  - type: paragraph
+    text: "Memory is the core. Candidates are extracted from completed work, then move through an explicit review lifecycle with audit history, near-duplicate and staleness detection, visibility scopes and deterministic retrieval. Only *approved* memory ever reaches future context."
+  - type: paragraph
+    text: "A cloud control plane (axum and Postgres, deployed on Fly.io) gives organizations shared pools of projects, agents and MCP servers with a memory review queue, alongside an Electron desktop app and a Next.js dashboard, with one sign-in across web, desktop and CLI."
+  - type: code
+    text: "# install the CLI (macOS / Linux)\ncurl -fsSL https://raw.githubusercontent.com/in-th3-l00p/codel00p/main/install.sh | sh\n\n# then just run\ncodel00p"
+  - type: heading
+    text: "How it is built"
+  - type: paragraph
+    text: "codel00p is a monorepo: a Rust workspace of 14 crates for the engine (memory, harness, providers, cli, cloud, storage, mcp, skills, plugins, gateway, cron, session, protocol) plus TypeScript and Next.js apps for the web, docs and dashboard. Web and docs deploy to Vercel, the cloud API to Fly.io with Postgres, and tagged releases build the CLI and desktop app for five platforms through GitHub Actions."
+  - type: heading
+    text: "Where it is going"
+  - type: paragraph
+    text: "Next is deeper memory quality (semantic retrieval, merge and split, richer revision history), organization provider policy with usage and budget controls, certification against the third-party MCP servers teams actually use, and coordinated multi-agent work for long-horizon tasks."
+  - type: paragraph
+    text: "codel00p is *open-source by default*: fully inspectable and hackable, with the cloud making teams stronger without locking them in. The code lives at github.com/in-th3-l00p/codel00p and the project is online at codel00p.dev."
