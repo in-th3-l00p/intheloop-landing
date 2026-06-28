@@ -36,3 +36,76 @@ a{color:inherit}
 
 /* visual-log plates */
 .il-plate:hover{filter:brightness(1.14)}
+
+/* ============================================================
+   Responsive overrides
+   The page is built with inline styles (desktop-first). These
+   media-query rules use !important to override those inline
+   values on smaller viewports — the only reliable way to win
+   against an element's own style attribute. Marker classes are
+   added in the JSX; desktop layout stays untouched in the inline
+   styles. Breakpoints are content-driven: ~920px (tablet) and
+   ~600px (phone).
+   ============================================================ */
+
+/* horizontal page gutter */
+.il-px{padding-left:40px;padding-right:40px}
+
+@media (max-width:920px){
+  .il-px{padding-left:30px!important;padding-right:30px!important}
+
+  /* dense column grids step down one tier */
+  .il-grid-6{grid-template-columns:repeat(3,1fr)!important}
+  .il-grid-5{grid-template-columns:repeat(3,1fr)!important}
+  .il-grid-4{grid-template-columns:repeat(2,1fr)!important}
+  .il-grid-3{grid-template-columns:repeat(2,1fr)!important}
+
+  /* sidebar / split layouts stack */
+  .il-about{grid-template-columns:1fr!important;gap:40px!important}
+  .il-about-aside{
+    border-left:none!important;
+    border-top:1px solid rgba(233,226,211,.15)!important;
+    padding-left:0!important;
+    padding-top:30px!important;
+  }
+  .il-stack-side{grid-template-columns:1fr!important;gap:20px!important}
+}
+
+@media (max-width:600px){
+  .il-px{padding-left:20px!important;padding-right:20px!important}
+
+  /* trim the airy top rhythm so the fold isn't empty on phones */
+  .il-secpad{padding-top:84px!important}
+
+  .il-grid-6{grid-template-columns:repeat(2,1fr)!important}
+  .il-grid-5{grid-template-columns:repeat(2,1fr)!important}
+  .il-grid-4{grid-template-columns:repeat(2,1fr)!important}
+  .il-grid-3{grid-template-columns:1fr!important}
+  .il-grid-2{grid-template-columns:1fr!important}
+
+  /* visual-log: 4×2 strip becomes a 2-wide stack of square-ish plates */
+  .il-visual{
+    grid-template-columns:repeat(2,1fr)!important;
+    grid-template-rows:none!important;
+    grid-auto-rows:148px!important;
+  }
+
+  /* article index rows: 3-track grid -> single stacked column */
+  .il-artrow{
+    grid-template-columns:1fr!important;
+    gap:6px!important;
+    padding-top:22px!important;
+    padding-bottom:22px!important;
+  }
+  .il-artmeta{text-align:left!important;white-space:normal!important}
+
+  /* footers / split rows stack instead of justify-between crushing */
+  .il-footrow{
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    gap:12px!important;
+  }
+
+  /* secondary marginalia that has nowhere to go on a phone */
+  .il-hide-sm{display:none!important}
+}

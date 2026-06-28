@@ -17,9 +17,9 @@ export default function LogoPage() {
 
       <TopBar crumbs={[{ label: "Home", href: "/" }, { label: "Logo" }]} />
 
-      <div style={{ position: "relative", maxWidth: 1280, margin: "0 auto", padding: "56px 48px 80px" }}>
+      <div className="il-px" style={{ position: "relative", maxWidth: 1280, margin: "0 auto", padding: "56px 48px 80px" }}>
         {/* header */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: "1px solid rgba(233,226,211,.15)", paddingBottom: 16, fontFamily: MONO }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", flexWrap: "wrap", gap: "6px 18px", borderBottom: "1px solid rgba(233,226,211,.15)", paddingBottom: 16, fontFamily: MONO }}>
           <div style={{ fontSize: 11, letterSpacing: ".2em", textTransform: "uppercase", color: "#9a8ea4" }}><span style={{ color: "#a585cf" }}>❧</span> intheloop · Identity</div>
           <div style={{ fontSize: 11, letterSpacing: ".2em", textTransform: "uppercase", color: "#9a8ea4" }}>Logo studies / MMXXVI</div>
         </div>
@@ -31,7 +31,7 @@ export default function LogoPage() {
         </p>
 
         {/* grid of marks */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 22, marginTop: 48 }}>
+        <div className="il-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 22, marginTop: 48 }}>
           {/* 01 · orbit */}
           <div data-reveal="" style={{ position: "relative", aspectRatio: "1/1", border: "1px solid rgba(233,226,211,.16)", background: "#13101b", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
             <span style={cap}>01 · Orbit</span>
@@ -99,7 +99,7 @@ export default function LogoPage() {
         </div>
 
         {/* primary lockup feature */}
-        <div data-reveal="" style={{ marginTop: 48, border: "1px solid rgba(233,226,211,.15)", background: "linear-gradient(180deg,#15101e,#100b18)", padding: "72px 48px", display: "flex", alignItems: "center", justifyContent: "center", gap: 30, flexWrap: "wrap" }}>
+        <div data-reveal="" className="il-px" style={{ marginTop: 48, border: "1px solid rgba(233,226,211,.15)", background: "linear-gradient(180deg,#15101e,#100b18)", padding: "72px 48px", display: "flex", alignItems: "center", justifyContent: "center", gap: 30, flexWrap: "wrap" }}>
           <div style={{ position: "relative", width: 64, height: 64, flex: "none" }}>
             <div style={{ position: "absolute", inset: 0, border: "2px solid #c4a9e0", borderRadius: "50%" }} />
             <div style={{ position: "absolute", inset: 0, borderRadius: "50%", animation: "rot 16s linear infinite" }}>

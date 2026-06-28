@@ -41,7 +41,7 @@ export default async function LandingPage() {
         <div data-parallax="0.07" style={{ position: "absolute", top: "5%", right: 30, pointerEvents: "none", userSelect: "none" }}>
           <span style={{ display: "inline-block", fontFamily: BLACKLETTER, fontSize: "clamp(170px,24vw,360px)", lineHeight: 1, color: "rgba(124,95,166,.12)", animation: "floaty 11s ease-in-out infinite" }}>il</span>
         </div>
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1320, margin: "0 auto", width: "100%", padding: "0 40px 15vh" }}>
+        <div className="il-px" style={{ position: "relative", zIndex: 2, maxWidth: 1320, margin: "0 auto", width: "100%", padding: "0 40px 15vh" }}>
           <div data-reveal="" style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".24em", textTransform: "uppercase", color: "#b3a6bf", display: "flex", gap: 16, alignItems: "center" }}>
             <span style={{ width: 46, height: 1, background: "#a585cf", display: "inline-block" }} />
             {home.heroEyebrow}
@@ -56,13 +56,13 @@ export default async function LandingPage() {
       </div>
 
       {/* ABOUT */}
-      <div id="about" style={{ position: "relative", padding: "130px 40px 96px", maxWidth: 1320, margin: "0 auto", scrollMarginTop: 40 }}>
+      <div id="about" className="il-px il-secpad" style={{ position: "relative", padding: "130px 40px 96px", maxWidth: 1320, margin: "0 auto", scrollMarginTop: 40 }}>
         <div data-reveal="" style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#9a8ea4", borderBottom: "1px solid rgba(233,226,211,.15)", paddingBottom: 14 }}>
           <span><span style={{ color: "#a585cf" }}>❦</span>&nbsp; {home.aboutLabel}</span>
           <span>{home.aboutNumber}</span>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1.35fr 1fr", gap: 64, marginTop: 54, alignItems: "start" }}>
+        <div className="il-about" style={{ display: "grid", gridTemplateColumns: "1.35fr 1fr", gap: 64, marginTop: 54, alignItems: "start" }}>
           <div>
             <h2 data-reveal="" style={{ fontWeight: 400, fontSize: "clamp(30px,3.6vw,52px)", lineHeight: 1.26, letterSpacing: "-.01em", maxWidth: "24ch" }}>
               {accent(home.aboutStatement)}
@@ -76,7 +76,7 @@ export default async function LandingPage() {
               gathers our case studies and articles, everything we&apos;re thinking through in the open.
             </p>
           </div>
-          <div data-reveal="" style={{ fontFamily: MONO, borderLeft: "1px solid rgba(233,226,211,.15)", paddingLeft: 34, display: "flex", flexDirection: "column", gap: 26 }}>
+          <div data-reveal="" className="il-about-aside" style={{ fontFamily: MONO, borderLeft: "1px solid rgba(233,226,211,.15)", paddingLeft: 34, display: "flex", flexDirection: "column", gap: 26 }}>
             <div>
               <div style={{ fontSize: 10, letterSpacing: ".16em", textTransform: "uppercase", color: "#82749a", marginBottom: 7 }}>Founded</div>
               <div style={{ fontSize: 14, color: "#e9e2d3" }}>{home.founded}</div>
@@ -93,7 +93,7 @@ export default async function LandingPage() {
         </div>
 
         {/* portal links */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24, marginTop: 72 }}>
+        <div className="il-grid-2" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24, marginTop: 72 }}>
           <Link href="/publishings" data-reveal="" className="il-card" style={{ position: "relative", textDecoration: "none", color: "inherit", border: "1px solid rgba(233,226,211,.16)", background: "#15101c", overflow: "hidden", padding: "40px 38px 34px", minHeight: 262, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <span style={{ position: "absolute", top: 14, left: 15, width: 11, height: 11, borderLeft: "1px solid rgba(233,226,211,.34)", borderTop: "1px solid rgba(233,226,211,.34)" }} />
             <span style={{ position: "absolute", bottom: 14, right: 15, width: 11, height: 11, borderRight: "1px solid rgba(233,226,211,.34)", borderBottom: "1px solid rgba(233,226,211,.34)" }} />
@@ -127,7 +127,7 @@ export default async function LandingPage() {
       <div style={{ position: "relative", margin: "80px 0", borderTop: "1px solid rgba(233,226,211,.15)", borderBottom: "1px solid rgba(233,226,211,.15)", overflow: "hidden" }}>
         <div data-parallax="0.08" style={{ position: "absolute", left: "-5%", top: "-18%", width: "110%", height: "136%", background: "#0e0a14 url('/uploads/galaxy.png') center/cover no-repeat", animation: "kenburns 50s ease-in-out infinite alternate" }} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(95% 130% at 50% 50%,rgba(14,10,20,.18),rgba(14,10,20,.74))" }} />
-        <div data-reveal="" style={{ position: "relative", padding: "118px 40px", maxWidth: 1320, margin: "0 auto", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "24px 52px" }}>
+        <div data-reveal="" className="il-px" style={{ position: "relative", padding: "118px 40px", maxWidth: 1320, margin: "0 auto", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "24px 52px" }}>
           <span style={{ fontFamily: BLACKLETTER, fontSize: 88, color: "#c4a9e0", lineHeight: ".8" }}>A</span>
           <div style={{ fontSize: "clamp(26px,3vw,44px)", fontWeight: 400, letterSpacing: "-.005em", maxWidth: "22ch", fontStyle: "italic", color: "#e9e2d3" }}>{accent(home.bandQuote)}</div>
         </div>
@@ -137,8 +137,8 @@ export default async function LandingPage() {
       <VisualLog />
 
       {/* contact */}
-      <div id="contact" style={{ position: "relative", padding: "96px 40px 72px", maxWidth: 1320, margin: "68px auto 0", borderTop: "1px solid rgba(233,226,211,.15)", scrollMarginTop: 40 }}>
-        <div data-reveal="" style={{ position: "absolute", top: 54, right: 40, fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#9a8ea4" }}>[ Inquiries open ]</div>
+      <div id="contact" className="il-px" style={{ position: "relative", padding: "96px 40px 72px", maxWidth: 1320, margin: "68px auto 0", borderTop: "1px solid rgba(233,226,211,.15)", scrollMarginTop: 40 }}>
+        <div data-reveal="" className="il-hide-sm" style={{ position: "absolute", top: 54, right: 40, fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#9a8ea4" }}>[ Inquiries open ]</div>
         <h2 data-reveal="" style={{ fontSize: "clamp(56px,10vw,168px)", lineHeight: ".92", fontWeight: 400, letterSpacing: "-.02em" }}>{home.contactHeading}</h2>
         <div data-reveal="" style={{ display: "flex", flexWrap: "wrap", gap: 48, marginTop: 52, fontFamily: MONO, fontSize: 13, color: "#b3a6bf" }}>
           <div>
@@ -154,7 +154,7 @@ export default async function LandingPage() {
             {settings.indexHandle}
           </div>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 88, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#9a8ea4" }}>
+        <div className="il-footrow" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 88, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#9a8ea4" }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
             <span style={{ letterSpacing: "-.01em" }}><span style={{ color: "#a585cf" }}>[</span>{settings.studioName}<span style={{ color: "#a585cf" }}>]</span></span>
             <span style={{ color: "#82749a" }}>© {settings.copyrightYear}</span>

@@ -54,7 +54,7 @@ export default async function PortfolioPage() {
           {projects.length === 0 ? (
             <EmptyState label="No projects yet" message="Selected project work will be catalogued here as it ships." />
           ) : (
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "38px 28px", marginTop: 42 }}>
+          <div className="il-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "38px 28px", marginTop: 42 }}>
             {projects.map((p) => {
               const tile = (
                 <>
@@ -100,7 +100,7 @@ export default async function PortfolioPage() {
           {caseStudies.length === 0 ? (
             <EmptyState label="No case studies yet" message="In-depth write-ups of the studio's work are in progress and will land here." />
           ) : (
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "32px 28px", marginTop: 42 }}>
+          <div className="il-grid-2" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "32px 28px", marginTop: 42 }}>
             {caseStudies.map((c) => (
               <Link key={c.slug} href={`/case-study/${c.slug}`} data-reveal="" className="il-project" style={{ display: "block", textDecoration: "none", color: "inherit" }}>
                 <div style={{ position: "relative", aspectRatio: "16/9", overflow: "hidden", border: "1px solid rgba(233,226,211,.16)", background: "#15101c" }}>
@@ -137,7 +137,7 @@ export default async function PortfolioPage() {
           ) : (
           <div style={{ display: "flex", flexDirection: "column", gap: 1, marginTop: 42, borderTop: "1px solid rgba(233,226,211,.14)" }}>
             {articles.map((a) => (
-              <Link key={a.slug} href={`/articles/${a.slug}`} data-reveal="" className="il-row" style={{ display: "grid", gridTemplateColumns: "160px 1fr auto", gap: 28, alignItems: "baseline", padding: "30px 8px", textDecoration: "none", color: "inherit", borderBottom: "1px solid rgba(233,226,211,.12)" }}>
+              <Link key={a.slug} href={`/articles/${a.slug}`} data-reveal="" className="il-row il-artrow" style={{ display: "grid", gridTemplateColumns: "160px 1fr auto", gap: 28, alignItems: "baseline", padding: "30px 8px", textDecoration: "none", color: "inherit", borderBottom: "1px solid rgba(233,226,211,.12)" }}>
                 <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "#9a8ea4" }}>
                   <span style={{ color: "#a585cf" }}>№ {a.number}</span>
                   <br />
@@ -147,7 +147,7 @@ export default async function PortfolioPage() {
                   <div style={{ fontSize: 28, fontWeight: 400, letterSpacing: "-.01em", lineHeight: 1.15 }}>{a.title}</div>
                   <div style={{ fontFamily: MONO, fontSize: 12, lineHeight: 1.8, color: "#b3a6bf", marginTop: 10, maxWidth: "60ch" }}>{a.summary}</div>
                 </div>
-                <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#82749a", textAlign: "right", whiteSpace: "nowrap" }}>
+                <div className="il-artmeta" style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#82749a", textAlign: "right", whiteSpace: "nowrap" }}>
                   {formatDate(a.date)}
                   {a.readingTime ? <><br />{a.readingTime}</> : null}
                   <div style={{ color: "#c4a9e0", fontSize: 15, marginTop: 8 }}>↗</div>
@@ -166,7 +166,7 @@ export default async function PortfolioPage() {
       <TopBar crumbs={[{ label: "Home", href: "/" }, { label: "Publishings" }]} />
 
       {/* header */}
-      <div style={{ position: "relative", padding: "118px 40px 56px", maxWidth: 1320, margin: "0 auto", overflow: "hidden" }}>
+      <div className="il-px il-secpad" style={{ position: "relative", padding: "118px 40px 56px", maxWidth: 1320, margin: "0 auto", overflow: "hidden" }}>
         <div style={{ position: "absolute", top: "-4%", right: 24, pointerEvents: "none", userSelect: "none" }}>
           <span style={{ display: "inline-block", fontFamily: BLACKLETTER, fontSize: "clamp(150px,20vw,300px)", lineHeight: 1, color: "rgba(124,95,166,.10)", animation: "floaty 11s ease-in-out infinite" }}>il</span>
         </div>
@@ -188,7 +188,7 @@ export default async function PortfolioPage() {
       </div>
 
       {/* footer */}
-      <div style={{ position: "relative", padding: "80px 40px 72px", maxWidth: 1320, margin: "72px auto 0", borderTop: "1px solid rgba(233,226,211,.15)" }}>
+      <div className="il-px" style={{ position: "relative", padding: "80px 40px 72px", maxWidth: 1320, margin: "72px auto 0", borderTop: "1px solid rgba(233,226,211,.15)" }}>
         <Link href="/" data-reveal="" className="il-card" style={{ position: "relative", display: "flex", flexDirection: "column", justifyContent: "space-between", textDecoration: "none", color: "inherit", border: "1px solid rgba(233,226,211,.16)", background: "#15101c", overflow: "hidden", padding: "34px 34px 28px", minHeight: 172 }}>
           <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".16em", textTransform: "uppercase", color: "#9a8ea4" }}>← Back</div>
           <div>
@@ -196,7 +196,7 @@ export default async function PortfolioPage() {
             <div style={{ fontFamily: MONO, fontSize: 12, color: "#b3a6bf", marginTop: 12 }}>The studio</div>
           </div>
         </Link>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 64, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#9a8ea4" }}>
+        <div className="il-footrow" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 64, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#9a8ea4" }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
             <span><span style={{ color: "#a585cf" }}>[</span>{settings.studioName}<span style={{ color: "#a585cf" }}>]</span></span>
             <span style={{ color: "#82749a" }}>© {settings.copyrightYear}</span>
@@ -211,7 +211,7 @@ export default async function PortfolioPage() {
 // Section header (mono index label + count) shared by all three tab panels.
 function Section({ icon, label, meta, children }: { icon: string; label: string; meta: string; children: React.ReactNode }) {
   return (
-    <div style={{ padding: "32px 40px 40px", maxWidth: 1320, margin: "0 auto" }}>
+    <div className="il-px" style={{ padding: "32px 40px 40px", maxWidth: 1320, margin: "0 auto" }}>
       <div data-reveal="" style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#9a8ea4", borderBottom: "1px solid rgba(233,226,211,.15)", paddingBottom: 14 }}>
         <span><span style={{ color: "#a585cf" }}>{icon}</span> {label}</span>
         <span>{meta}</span>
@@ -226,6 +226,7 @@ function EmptyState({ label, message }: { label: string; message: string }) {
   return (
     <div
       data-reveal=""
+      className="il-px"
       style={{
         position: "relative",
         marginTop: 42,

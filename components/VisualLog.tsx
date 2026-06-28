@@ -50,7 +50,7 @@ export default function VisualLog() {
   }, []);
 
   return (
-    <div style={{ padding: "84px 40px 40px", maxWidth: 1320, margin: "0 auto", paddingTop: 40 }}>
+    <div className="il-px" style={{ padding: "84px 40px 40px", maxWidth: 1320, margin: "0 auto", paddingTop: 40 }}>
       <div
         data-reveal=""
         style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#9a8ea4", borderBottom: "1px solid rgba(233,226,211,.15)", paddingBottom: 14, marginBottom: 34 }}
@@ -59,6 +59,7 @@ export default function VisualLog() {
       </div>
       <div
         ref={gridRef}
+        className="il-visual"
         style={{ position: "relative", display: "grid", gridTemplateColumns: "repeat(4,1fr)", gridTemplateRows: "repeat(2,210px)", gap: 16 }}
       >
         {CELLS.map((_, i) => (

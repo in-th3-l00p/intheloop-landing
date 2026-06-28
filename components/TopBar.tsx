@@ -11,7 +11,7 @@ export type Crumb = { label: string; href?: string };
 export default function TopBar({ crumbs }: { crumbs?: Crumb[] }) {
   return (
     <div style={{ borderBottom: "1px solid rgba(233,226,211,.15)", fontFamily: MONO }}>
-      <div style={{ maxWidth: 1320, margin: "0 auto", padding: "22px 40px", display: "flex", alignItems: "center", gap: 22, flexWrap: "wrap" }}>
+      <div className="il-px" style={{ maxWidth: 1320, margin: "0 auto", padding: "22px 40px", display: "flex", alignItems: "center", gap: 22, flexWrap: "wrap" }}>
         <Link href="/" style={{ fontSize: 13, letterSpacing: ".04em", fontWeight: 500, display: "flex", alignItems: "center", gap: 11, textDecoration: "none", color: "inherit" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/il-seal.svg" alt="intheloop seal" style={{ width: 30, height: 30, display: "block" }} />

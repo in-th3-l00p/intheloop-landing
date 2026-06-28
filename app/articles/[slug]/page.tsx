@@ -61,7 +61,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
       />
 
       {/* header */}
-      <div style={{ position: "relative", padding: "110px 40px 56px", maxWidth: 1320, margin: "0 auto", overflow: "hidden" }}>
+      <div className="il-px il-secpad" style={{ position: "relative", padding: "110px 40px 56px", maxWidth: 1320, margin: "0 auto", overflow: "hidden" }}>
         <div style={{ position: "absolute", top: "-8%", right: -10, pointerEvents: "none", userSelect: "none" }}>
           <span style={{ display: "inline-block", fontFamily: BLACKLETTER, fontSize: "clamp(130px,16vw,240px)", lineHeight: 1, color: "rgba(124,95,166,.08)", animation: "floaty 11s ease-in-out infinite" }}>¶</span>
         </div>
@@ -84,7 +84,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
       </div>
 
       {/* body */}
-      <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 40px 40px" }}>
+      <div className="il-px" style={{ maxWidth: 1320, margin: "0 auto", padding: "0 40px 40px" }}>
         <article style={{ maxWidth: "64ch" }}>
           {article.body.map((block, i) => (
             <Block key={i} type={block.type} text={block.text} />
@@ -93,8 +93,8 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
       </div>
 
       {/* footer */}
-      <div style={{ position: "relative", maxWidth: 1320, margin: "72px auto 0", padding: "56px 40px 72px", borderTop: "1px solid rgba(233,226,211,.15)" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
+      <div className="il-px" style={{ position: "relative", maxWidth: 1320, margin: "72px auto 0", padding: "56px 40px 72px", borderTop: "1px solid rgba(233,226,211,.15)" }}>
+        <div className="il-grid-2" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
           <Link href="/publishings#articles" data-reveal="" className="il-card" style={{ position: "relative", display: "flex", flexDirection: "column", justifyContent: "space-between", textDecoration: "none", color: "inherit", border: "1px solid rgba(233,226,211,.16)", background: "#15101c", overflow: "hidden", padding: "30px 30px 24px", minHeight: 156 }}>
             <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".16em", textTransform: "uppercase", color: "#9a8ea4" }}>← Index</div>
             <div>
@@ -123,7 +123,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
             </Link>
           )}
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 56, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#9a8ea4" }}>
+        <div className="il-footrow" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 56, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#9a8ea4" }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
             <span><span style={{ color: "#a585cf" }}>[</span>{settings.studioName}<span style={{ color: "#a585cf" }}>]</span></span>
             <span style={{ color: "#82749a" }}>© {settings.copyrightYear}</span>

@@ -59,7 +59,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
       />
 
       {/* project header */}
-      <div style={{ position: "relative", padding: "110px 40px 64px", maxWidth: 1320, margin: "0 auto", overflow: "hidden" }}>
+      <div className="il-px il-secpad" style={{ position: "relative", padding: "110px 40px 64px", maxWidth: 1320, margin: "0 auto", overflow: "hidden" }}>
         <div style={{ position: "absolute", top: "-6%", right: 24, pointerEvents: "none", userSelect: "none" }}>
           <span style={{ display: "inline-block", fontFamily: BLACKLETTER, fontSize: "clamp(140px,18vw,280px)", lineHeight: 1, color: "rgba(124,95,166,.09)", animation: "floaty 11s ease-in-out infinite" }}>i</span>
         </div>
@@ -75,7 +75,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
         </p>
 
         {/* meta grid */}
-        <div data-reveal="" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 1, marginTop: 64, borderTop: "1px solid rgba(233,226,211,.15)", fontFamily: MONO }}>
+        <div data-reveal="" className="il-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 1, marginTop: 64, borderTop: "1px solid rgba(233,226,211,.15)", fontFamily: MONO }}>
           {meta.map(([label, value]) => (
             <div key={label} style={{ padding: "22px 0", borderBottom: "1px solid rgba(233,226,211,.12)" }}>
               <div style={{ fontSize: 10, letterSpacing: ".16em", textTransform: "uppercase", color: "#82749a", marginBottom: 9 }}>{label}</div>
@@ -86,7 +86,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
       </div>
 
       {/* VIDEO PLACEHOLDER */}
-      <div style={{ padding: "24px 40px 0", maxWidth: 1320, margin: "0 auto" }}>
+      <div className="il-px" style={{ padding: "24px 40px 0", maxWidth: 1320, margin: "0 auto" }}>
         <div data-reveal="" style={{ position: "relative", width: "100%", aspectRatio: "16/9", overflow: "hidden", border: "1px solid rgba(233,226,211,.18)", background: "#15101c", backgroundImage: "repeating-linear-gradient(135deg,#1d1528 0 11px,#150e1f 11px 22px)" }}>
           <span style={{ position: "absolute", top: 14, left: 15, width: 13, height: 13, borderLeft: "1px solid rgba(233,226,211,.42)", borderTop: "1px solid rgba(233,226,211,.42)" }} />
           <span style={{ position: "absolute", top: 14, right: 15, width: 13, height: 13, borderRight: "1px solid rgba(233,226,211,.42)", borderTop: "1px solid rgba(233,226,211,.42)" }} />
@@ -117,7 +117,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
       </Section>
 
       {/* PULL QUOTE */}
-      <div style={{ padding: "96px 40px", maxWidth: 1320, margin: "0 auto" }}>
+      <div className="il-px" style={{ padding: "96px 40px", maxWidth: 1320, margin: "0 auto" }}>
         <blockquote data-reveal="" style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-start", gap: "24px 40px", borderTop: "1px solid rgba(233,226,211,.15)", borderBottom: "1px solid rgba(233,226,211,.15)", padding: "72px 0" }}>
           <span style={{ fontFamily: BLACKLETTER, fontSize: 88, color: "#c4a9e0", lineHeight: ".7" }}>&ldquo;</span>
           <div style={{ fontSize: "clamp(26px,3.2vw,46px)", fontStyle: "italic", fontWeight: 400, lineHeight: 1.32, letterSpacing: "-.005em", maxWidth: "24ch", color: "#e9e2d3" }}>{cs.quote}</div>
@@ -134,8 +134,8 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
       </Section>
 
       {/* TWO IMAGE PLACEHOLDERS */}
-      <div style={{ padding: "72px 40px 0", maxWidth: 1320, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
+      <div className="il-px" style={{ padding: "72px 40px 0", maxWidth: 1320, margin: "0 auto" }}>
+        <div className="il-grid-2" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
           {["img / architecture diagram", "img / control surface"].map((label) => (
             <div key={label} data-reveal="" style={{ position: "relative", aspectRatio: "4/3", border: "1px solid rgba(233,226,211,.16)", overflow: "hidden", backgroundImage: "repeating-linear-gradient(135deg,#1d1528 0 9px,#150e1f 9px 18px)" }}>
               <span style={{ position: "absolute", left: 13, bottom: 12, fontFamily: MONO, fontSize: 10, letterSpacing: ".12em", textTransform: "uppercase", color: "#82749a" }}>{label}</span>
@@ -163,7 +163,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
       {/* OUTCOME */}
       <Section number="04" label="Outcome">
         <p data-reveal="" style={{ fontSize: 18, lineHeight: 1.85, color: "#c2b7cd" }}>{cs.outcomeIntro}</p>
-        <div data-reveal="" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 1, marginTop: 44, borderTop: "1px solid rgba(233,226,211,.15)" }}>
+        <div data-reveal="" className="il-grid-2" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 1, marginTop: 44, borderTop: "1px solid rgba(233,226,211,.15)" }}>
           {cs.stats.map((s) => (
             <div key={s.label} style={{ padding: "28px 0", borderBottom: "1px solid rgba(233,226,211,.12)" }}>
               <div style={{ fontSize: "clamp(40px,5vw,68px)", fontWeight: 400, letterSpacing: "-.02em", color: "#c4a9e0" }}>{s.value}</div>
@@ -175,8 +175,8 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
       </Section>
 
       {/* NEXT / FOOTER */}
-      <div style={{ position: "relative", padding: "96px 40px 72px", maxWidth: 1320, margin: "96px auto 0", borderTop: "1px solid rgba(233,226,211,.15)" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
+      <div className="il-px" style={{ position: "relative", padding: "96px 40px 72px", maxWidth: 1320, margin: "96px auto 0", borderTop: "1px solid rgba(233,226,211,.15)" }}>
+        <div className="il-grid-2" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
           <Link href="/publishings#case-studies" data-reveal="" className="il-card" style={{ position: "relative", display: "flex", flexDirection: "column", justifyContent: "space-between", textDecoration: "none", color: "inherit", border: "1px solid rgba(233,226,211,.16)", background: "#15101c", overflow: "hidden", padding: "34px 34px 28px", minHeight: 172 }}>
             <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".16em", textTransform: "uppercase", color: "#9a8ea4" }}>← Index</div>
             <div>
@@ -195,7 +195,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
             </div>
           </Link>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 64, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#9a8ea4" }}>
+        <div className="il-footrow" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 64, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#9a8ea4" }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
             <span><span style={{ color: "#a585cf" }}>[</span>{settings.studioName}<span style={{ color: "#a585cf" }}>]</span></span>
             <span style={{ color: "#82749a" }}>© {settings.copyrightYear}</span>
@@ -220,8 +220,8 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <div style={{ padding: topBorder ? "104px 40px 0" : "0 40px", maxWidth: 1320, margin: "0 auto" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 48 }}>
+    <div className="il-px" style={{ padding: topBorder ? "104px 40px 0" : "0 40px", maxWidth: 1320, margin: "0 auto" }}>
+      <div className="il-stack-side" style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 48 }}>
         <div data-reveal="" style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#9a8ea4" }}>
           <span style={{ color: "#a585cf" }}>{number}</span>
           <br />

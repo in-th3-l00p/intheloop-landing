@@ -51,6 +51,7 @@ export default function PortfolioTabs({ tabs }: { tabs: PortfolioTab[] }) {
         }}
       >
         <div
+          className="il-px"
           style={{
             maxWidth: 1320,
             margin: "0 auto",

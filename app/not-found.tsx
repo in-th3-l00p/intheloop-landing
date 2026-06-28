@@ -14,7 +14,7 @@ export default function NotFound() {
     <Frame>
       <TopBar crumbs={[{ label: "Home", href: "/" }, { label: "404" }]} />
 
-      <div style={{ position: "relative", maxWidth: 1320, margin: "0 auto", padding: "120px 40px 150px", overflow: "hidden", minHeight: "64vh" }}>
+      <div className="il-px il-secpad" style={{ position: "relative", maxWidth: 1320, margin: "0 auto", padding: "120px 40px 150px", overflow: "hidden", minHeight: "64vh" }}>
         <div style={{ position: "absolute", top: "-10%", right: 24, pointerEvents: "none", userSelect: "none" }}>
           <span style={{ display: "inline-block", fontFamily: BLACKLETTER, fontSize: "clamp(170px,24vw,360px)", lineHeight: 1, color: "rgba(124,95,166,.10)", animation: "floaty 11s ease-in-out infinite" }}>?</span>
         </div>
@@ -37,7 +37,7 @@ export default function NotFound() {
           <Link href="/publishings" className="il-navlink" style={{ padding: "13px 22px", border: "1px solid rgba(233,226,211,.18)", textDecoration: "none" }}>View publishings</Link>
         </div>
 
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 96, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#9a8ea4" }}>
+        <div className="il-footrow" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 96, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#9a8ea4" }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
             <span><span style={{ color: "#a585cf" }}>[</span>intheloop<span style={{ color: "#a585cf" }}>]</span></span>
             <span style={{ color: "#82749a" }}>© 2026</span>
