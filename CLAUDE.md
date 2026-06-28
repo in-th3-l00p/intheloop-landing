@@ -32,7 +32,7 @@ All under `app/`. Routes:
 | `/`                  | `app/page.tsx`                     | ✅ home + settings + projects | Hero (parallax `/uploads/hero.png` + blackletter "il" watermark), About, Publishings/Brand portal cards, galaxy statement band (`/uploads/galaxy.png`), sliced visual-log grid, contact |
 | `/publishings`       | `app/publishings/page.tsx`        | ✅ projects + caseStudies + articles collections | Selected-work index with **in-page tabs** (Projects / Case Studies / Articles). Tabs are an island (`components/PortfolioTabs.tsx`); active tab is mirrored to the URL hash (`/publishings#articles`). All three panels are server-rendered into the DOM (crawlable); the island only toggles visibility. Each tab renders a quiet `EmptyState` (in-file) when its collection has no entries; the placeholder tile/grid markup is kept in-file for when real content is added. **Route was `/portfolio`; renamed to `/publishings`.** |
 | `/case-study/[slug]` | `app/case-study/[slug]/page.tsx`  | ✅ caseStudies collection | Per-study write-up + outcome stats. `generateStaticParams` over the collection; "Next" card cycles to the next study by `number`. |
-| `/articles/[slug]`   | `app/articles/[slug]/page.tsx`    | ✅ articles collection | Per-article page. Body is a **typed block array** (paragraph / heading / quote / code) rendered by the local `Block` component — no markdown renderer/dependency. Paragraphs & quotes honour the `*asterisk*` lilac accent. |
+| `/articles/[slug]`   | `app/articles/[slug]/page.tsx`    | ✅ articles collection | Per-article page. Body is a **typed block array** (paragraph / heading / quote / code) rendered by the local `Block` component — no markdown renderer/dependency. Paragraphs & quotes honour the `*asterisk*` amethyst accent. |
 | `/brand`             | `app/brand/page.tsx`              | ❌ static | Brand book: logo, type, colour, voice, motifs + downloadable marks |
 | `/logo`              | `app/logo/page.tsx`              | ❌ static | Six logo studies + primary lockup |
 
@@ -109,8 +109,8 @@ Content is YAML in `content/`, read at **build time** via `lib/reader.ts`
   - `content/case-studies/*.yaml` — collection, one file per case study (`slugField: title`). Full write-up (overview, challenge, approach steps, stats…) plus `number` + `kind` for the index tile. **Was a singleton (`content/case-study.yaml`); converted to a collection.**
   - `content/articles/*.yaml` — collection, one file per article (`slugField: title`). `number`, `kind`, `date`, `readingTime`, `summary`, and `body` (the typed block array described above).
 - **Accent convention:** in heading/statement fields, wrap words in `*asterisks*` to render them
-  in the lilac italic accent. `lib/accent.tsx` does this: `accent(text)` splits on `/(\*[^*]+\*)/g`
-  and renders `*word*` as `<em>` in `#c4a9e0`; `lines(text)` turns `\n` into `<br/>`.
+  in the amethyst italic accent. `lib/accent.tsx` does this: `accent(text)` splits on `/(\*[^*]+\*)/g`
+  and renders `*word*` as `<em>` in `#b79ae6`; `lines(text)` turns `\n` into `<br/>`.
   Use `accent()`/`lines()` when surfacing CMS text — never dangerouslySetInnerHTML.
 - **Editing locally:** `npm run dev` → `/keystatic` → edit → writes to `content/` files → commit + push.
 
