@@ -54,13 +54,14 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
       <TopBar
         crumbs={[
           { label: "Home", href: "/" },
-          { label: "Articles", href: "/portfolio#articles" },
+          { label: "Publishings", href: "/publishings" },
+          { label: "Articles", href: "/publishings#articles" },
           { label: article.kind },
         ]}
       />
 
       {/* header */}
-      <div style={{ position: "relative", padding: "110px 40px 56px", maxWidth: 880, margin: "0 auto", overflow: "hidden" }}>
+      <div style={{ position: "relative", padding: "110px 40px 56px", maxWidth: 1320, margin: "0 auto", overflow: "hidden" }}>
         <div style={{ position: "absolute", top: "-8%", right: -10, pointerEvents: "none", userSelect: "none" }}>
           <span style={{ display: "inline-block", fontFamily: BLACKLETTER, fontSize: "clamp(130px,16vw,240px)", lineHeight: 1, color: "rgba(124,95,166,.08)", animation: "floaty 11s ease-in-out infinite" }}>¶</span>
         </div>
@@ -83,16 +84,18 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
       </div>
 
       {/* body */}
-      <article style={{ maxWidth: 720, margin: "0 auto", padding: "0 40px 40px" }}>
-        {article.body.map((block, i) => (
-          <Block key={i} type={block.type} text={block.text} />
-        ))}
-      </article>
+      <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 40px 40px" }}>
+        <article style={{ maxWidth: "64ch" }}>
+          {article.body.map((block, i) => (
+            <Block key={i} type={block.type} text={block.text} />
+          ))}
+        </article>
+      </div>
 
       {/* footer */}
-      <div style={{ position: "relative", maxWidth: 880, margin: "72px auto 0", padding: "56px 40px 72px", borderTop: "1px solid rgba(233,226,211,.15)" }}>
+      <div style={{ position: "relative", maxWidth: 1320, margin: "72px auto 0", padding: "56px 40px 72px", borderTop: "1px solid rgba(233,226,211,.15)" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
-          <Link href="/portfolio#articles" data-reveal="" className="il-card" style={{ position: "relative", display: "flex", flexDirection: "column", justifyContent: "space-between", textDecoration: "none", color: "inherit", border: "1px solid rgba(233,226,211,.16)", background: "#15101c", overflow: "hidden", padding: "30px 30px 24px", minHeight: 156 }}>
+          <Link href="/publishings#articles" data-reveal="" className="il-card" style={{ position: "relative", display: "flex", flexDirection: "column", justifyContent: "space-between", textDecoration: "none", color: "inherit", border: "1px solid rgba(233,226,211,.16)", background: "#15101c", overflow: "hidden", padding: "30px 30px 24px", minHeight: 156 }}>
             <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".16em", textTransform: "uppercase", color: "#9a8ea4" }}>← Index</div>
             <div>
               <div style={{ fontSize: "clamp(26px,3vw,38px)", fontWeight: 400, letterSpacing: "-.015em", lineHeight: 1 }}>All articles</div>

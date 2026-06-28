@@ -12,7 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const routes: { path: string; priority: number }[] = [
     { path: "", priority: 1 },
-    { path: "/portfolio", priority: 0.8 },
+    { path: "/publishings", priority: 0.8 },
     ...caseStudies.map((slug) => ({ path: `/case-study/${slug}`, priority: 0.7 })),
     ...articles.map((slug) => ({ path: `/articles/${slug}`, priority: 0.6 })),
     { path: "/brand", priority: 0.6 },

@@ -11,10 +11,10 @@ export type PortfolioTab = {
 };
 
 /**
- * Sticky tab navigation for the portfolio index. All three panels are rendered
+ * Sticky tab navigation for the publishings index. All three panels are rendered
  * server-side and live in the DOM (so the content is crawlable); this island only
  * toggles which one is visible. The active tab is mirrored to the URL hash so a
- * link like /portfolio#articles deep-links straight to that list.
+ * link like /publishings#articles deep-links straight to that list.
  */
 export default function PortfolioTabs({ tabs }: { tabs: PortfolioTab[] }) {
   const [active, setActive] = useState(tabs[0]?.id);

@@ -29,8 +29,8 @@ All under `app/`. Routes:
 
 | Route                | File                              | In CMS? | Contents |
 |----------------------|-----------------------------------|---------|----------|
-| `/`                  | `app/page.tsx`                     | ✅ home + settings + projects | Hero (parallax `/uploads/hero.png` + blackletter "il" watermark), About, Portfolio/Brand portal cards, galaxy statement band (`/uploads/galaxy.png`), sliced visual-log grid, contact |
-| `/portfolio`         | `app/portfolio/page.tsx`          | ✅ projects + caseStudies + articles collections | Selected-work index with **in-page tabs** (Projects / Case Studies / Articles). Tabs are an island (`components/PortfolioTabs.tsx`); active tab is mirrored to the URL hash (`/portfolio#articles`). All three panels are server-rendered into the DOM (crawlable); the island only toggles visibility. |
+| `/`                  | `app/page.tsx`                     | ✅ home + settings + projects | Hero (parallax `/uploads/hero.png` + blackletter "il" watermark), About, Publishings/Brand portal cards, galaxy statement band (`/uploads/galaxy.png`), sliced visual-log grid, contact |
+| `/publishings`       | `app/publishings/page.tsx`        | ✅ projects + caseStudies + articles collections | Selected-work index with **in-page tabs** (Projects / Case Studies / Articles). Tabs are an island (`components/PortfolioTabs.tsx`); active tab is mirrored to the URL hash (`/publishings#articles`). All three panels are server-rendered into the DOM (crawlable); the island only toggles visibility. Each tab renders a quiet `EmptyState` (in-file) when its collection has no entries; the placeholder tile/grid markup is kept in-file for when real content is added. **Route was `/portfolio`; renamed to `/publishings`.** |
 | `/case-study/[slug]` | `app/case-study/[slug]/page.tsx`  | ✅ caseStudies collection | Per-study write-up + outcome stats. `generateStaticParams` over the collection; "Next" card cycles to the next study by `number`. |
 | `/articles/[slug]`   | `app/articles/[slug]/page.tsx`    | ✅ articles collection | Per-article page. Body is a **typed block array** (paragraph / heading / quote / code) rendered by the local `Block` component — no markdown renderer/dependency. Paragraphs & quotes honour the `*asterisk*` lilac accent. |
 | `/brand`             | `app/brand/page.tsx`              | ❌ static | Brand book: logo, type, colour, voice, motifs + downloadable marks |
@@ -141,7 +141,7 @@ Stored in **Vercel** project env + a **git-ignored `.env`** locally. Never commi
 - `SITE_URL = "https://intheloop.space"` — used in `app/layout.tsx`, `robots.ts`, `sitemap.ts`, `manifest.ts`.
 - `app/layout.tsx` — full `metadata` export (metadataBase, title template, description, openGraph,
   twitter `summary_large_image`, robots, keywords) + `viewport` export (themeColor `#0e0a14`, dark).
-- Per-page `metadata` with `alternates.canonical` (see `app/portfolio/page.tsx`).
+- Per-page `metadata` with `alternates.canonical` (see `app/publishings/page.tsx`).
 - `app/robots.ts`, `app/sitemap.ts` (async; static routes + every case study & article slug from the reader, `LAST_MODIFIED`), `app/manifest.ts`.
 - `app/not-found.tsx` — branded 404, robots `noindex`.
 - Icons/OG: `app/icon.svg`, `app/apple-icon.png`, `app/opengraph-image.png` (1200×630),

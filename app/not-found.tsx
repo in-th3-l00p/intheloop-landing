@@ -34,7 +34,7 @@ export default function NotFound() {
 
         <div data-reveal="" style={{ display: "flex", flexWrap: "wrap", gap: 14, marginTop: 44, fontFamily: MONO, fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase" }}>
           <Link href="/" style={{ padding: "13px 22px", border: "1px solid rgba(196,169,224,.45)", color: "#c4a9e0", textDecoration: "none" }}>← Back home</Link>
-          <Link href="/portfolio" className="il-navlink" style={{ padding: "13px 22px", border: "1px solid rgba(233,226,211,.18)", textDecoration: "none" }}>View portfolio</Link>
+          <Link href="/publishings" className="il-navlink" style={{ padding: "13px 22px", border: "1px solid rgba(233,226,211,.18)", textDecoration: "none" }}>View publishings</Link>
         </div>
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 96, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#9a8ea4" }}>

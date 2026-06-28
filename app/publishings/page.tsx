@@ -7,8 +7,8 @@ import { MONO, BLACKLETTER } from "@/components/tokens";
 import { reader } from "@/lib/reader";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  alternates: { canonical: "/portfolio" },
+  title: "Publishings",
+  alternates: { canonical: "/publishings" },
   description:
     "A working index of the studio's practice: projects, case studies and writing on distributed systems, applied research, interface craft and the quiet tooling in between.",
 };
@@ -51,6 +51,9 @@ export default async function PortfolioPage() {
       count: pad2(projects.length),
       content: (
         <Section icon="❦" label="Projects" meta={`${pad2(projects.length)} works · ${settings.copyrightYear}`}>
+          {projects.length === 0 ? (
+            <EmptyState label="No projects yet" message="Selected project work will be catalogued here as it ships." />
+          ) : (
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "38px 28px", marginTop: 42 }}>
             {projects.map((p) => {
               const tile = (
@@ -84,6 +87,7 @@ export default async function PortfolioPage() {
               );
             })}
           </div>
+          )}
         </Section>
       ),
     },
@@ -93,6 +97,9 @@ export default async function PortfolioPage() {
       count: pad2(caseStudies.length),
       content: (
         <Section icon="✠" label="Case studies" meta={`${pad2(caseStudies.length)} deep dives`}>
+          {caseStudies.length === 0 ? (
+            <EmptyState label="No case studies yet" message="In-depth write-ups of the studio's work are in progress and will land here." />
+          ) : (
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "32px 28px", marginTop: 42 }}>
             {caseStudies.map((c) => (
               <Link key={c.slug} href={`/case-study/${c.slug}`} data-reveal="" className="il-project" style={{ display: "block", textDecoration: "none", color: "inherit" }}>
@@ -115,6 +122,7 @@ export default async function PortfolioPage() {
               </Link>
             ))}
           </div>
+          )}
         </Section>
       ),
     },
@@ -124,6 +132,9 @@ export default async function PortfolioPage() {
       count: pad2(articles.length),
       content: (
         <Section icon="❧" label="Articles" meta={`${pad2(articles.length)} pieces`}>
+          {articles.length === 0 ? (
+            <EmptyState label="No articles yet" message="Notes and essays from the studio will be published here soon." />
+          ) : (
           <div style={{ display: "flex", flexDirection: "column", gap: 1, marginTop: 42, borderTop: "1px solid rgba(233,226,211,.14)" }}>
             {articles.map((a) => (
               <Link key={a.slug} href={`/articles/${a.slug}`} data-reveal="" className="il-row" style={{ display: "grid", gridTemplateColumns: "160px 1fr auto", gap: 28, alignItems: "baseline", padding: "30px 8px", textDecoration: "none", color: "inherit", borderBottom: "1px solid rgba(233,226,211,.12)" }}>
@@ -144,6 +155,7 @@ export default async function PortfolioPage() {
               </Link>
             ))}
           </div>
+          )}
         </Section>
       ),
     },
@@ -151,7 +163,7 @@ export default async function PortfolioPage() {
 
   return (
     <Frame>
-      <TopBar crumbs={[{ label: "Home", href: "/" }, { label: "Portfolio" }]} />
+      <TopBar crumbs={[{ label: "Home", href: "/" }, { label: "Publishings" }]} />
 
       {/* header */}
       <div style={{ position: "relative", padding: "118px 40px 56px", maxWidth: 1320, margin: "0 auto", overflow: "hidden" }}>
@@ -166,7 +178,7 @@ export default async function PortfolioPage() {
           Selected <em style={{ fontStyle: "italic", fontWeight: 400, color: "#c4a9e0" }}>work</em>.
         </h1>
         <p data-reveal="" style={{ position: "relative", fontFamily: MONO, fontSize: 13, lineHeight: 1.9, color: "#c2b7cd", maxWidth: "56ch", marginTop: 28 }}>
-          A working index of the studio&apos;s practice: projects, case studies and writing on distributed systems, applied research, interface craft and the quiet tooling in between. Engagements are taken on by invitation and referral.
+          A working index of the studio&apos;s practice: projects, case studies and writing on distributed systems, applied research, interface craft and the quiet tooling in between.
         </p>
       </div>
 
@@ -205,6 +217,36 @@ function Section({ icon, label, meta, children }: { icon: string; label: string;
         <span>{meta}</span>
       </div>
       {children}
+    </div>
+  );
+}
+
+// Quiet empty state shown in a tab whose collection has no entries yet.
+function EmptyState({ label, message }: { label: string; message: string }) {
+  return (
+    <div
+      data-reveal=""
+      style={{
+        position: "relative",
+        marginTop: 42,
+        border: "1px solid rgba(233,226,211,.16)",
+        background: "#15101c",
+        overflow: "hidden",
+        padding: "92px 40px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        textAlign: "center",
+      }}
+    >
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "repeating-linear-gradient(135deg,#1d1528 0 9px,#150e1f 9px 18px)", opacity: 0.4 }} />
+      <span style={{ position: "absolute", top: 14, left: 15, width: 12, height: 12, borderLeft: "1px solid rgba(233,226,211,.34)", borderTop: "1px solid rgba(233,226,211,.34)" }} />
+      <span style={{ position: "absolute", top: 14, right: 15, width: 12, height: 12, borderRight: "1px solid rgba(233,226,211,.34)", borderTop: "1px solid rgba(233,226,211,.34)" }} />
+      <span style={{ position: "absolute", bottom: 14, left: 15, width: 12, height: 12, borderLeft: "1px solid rgba(233,226,211,.34)", borderBottom: "1px solid rgba(233,226,211,.34)" }} />
+      <span style={{ position: "absolute", bottom: 14, right: 15, width: 12, height: 12, borderRight: "1px solid rgba(233,226,211,.34)", borderBottom: "1px solid rgba(233,226,211,.34)" }} />
+      <span style={{ position: "relative", fontFamily: BLACKLETTER, fontSize: 72, lineHeight: 0.8, color: "#c4a9e0" }}>il</span>
+      <div style={{ position: "relative", fontFamily: MONO, fontSize: 11, letterSpacing: ".2em", textTransform: "uppercase", color: "#9a8ea4", marginTop: 26 }}>{label}</div>
+      <p style={{ position: "relative", fontSize: 21, lineHeight: 1.5, fontStyle: "italic", color: "#c2b7cd", maxWidth: "38ch", marginTop: 12 }}>{message}</p>
     </div>
   );
 }

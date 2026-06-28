@@ -72,7 +72,7 @@ export default async function LandingPage() {
             </p>
             <p data-reveal="" style={{ fontFamily: MONO, fontSize: 13, lineHeight: 2, color: "#c2b7cd", maxWidth: "52ch", marginTop: 22 }}>
               Curious what&apos;s happening intheloop? The{" "}
-              <Link href="/portfolio" className="il-navlink" style={{ color: "#c4a9e0", textDecoration: "none" }}>publishings page</Link>{" "}
+              <Link href="/publishings" className="il-navlink" style={{ color: "#c4a9e0", textDecoration: "none" }}>publishings page</Link>{" "}
               gathers our case studies and articles, everything we&apos;re thinking through in the open.
             </p>
           </div>
@@ -94,7 +94,7 @@ export default async function LandingPage() {
 
         {/* portal links */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24, marginTop: 72 }}>
-          <Link href="/portfolio" data-reveal="" className="il-card" style={{ position: "relative", textDecoration: "none", color: "inherit", border: "1px solid rgba(233,226,211,.16)", background: "#15101c", overflow: "hidden", padding: "40px 38px 34px", minHeight: 262, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+          <Link href="/publishings" data-reveal="" className="il-card" style={{ position: "relative", textDecoration: "none", color: "inherit", border: "1px solid rgba(233,226,211,.16)", background: "#15101c", overflow: "hidden", padding: "40px 38px 34px", minHeight: 262, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <span style={{ position: "absolute", top: 14, left: 15, width: 11, height: 11, borderLeft: "1px solid rgba(233,226,211,.34)", borderTop: "1px solid rgba(233,226,211,.34)" }} />
             <span style={{ position: "absolute", bottom: 14, right: 15, width: 11, height: 11, borderRight: "1px solid rgba(233,226,211,.34)", borderBottom: "1px solid rgba(233,226,211,.34)" }} />
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", fontFamily: MONO, fontSize: 11, letterSpacing: ".16em", textTransform: "uppercase", color: "#9a8ea4" }}>
