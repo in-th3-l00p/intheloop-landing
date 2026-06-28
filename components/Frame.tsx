@@ -3,7 +3,7 @@ import ScrollEffects from "./ScrollEffects";
 import { SERIF } from "./tokens";
 
 /**
- * Shared page chrome: aubergine ground, ambient dot-grid, fixed corner
+ * Shared page chrome: graphite ground, ambient dot-grid, fixed corner
  * crosshairs, the scroll-progress bar, and the scroll-effects runtime.
  * Page content renders in the z-indexed inner layer.
  */
@@ -13,8 +13,8 @@ export default function Frame({ children }: { children: ReactNode }) {
       style={{
         position: "relative",
         width: "100%",
-        background: "#0e0a14",
-        color: "#e9e2d3",
+        background: "#0c0e10",
+        color: "#e6e6e2",
         fontFamily: SERIF,
         overflow: "hidden",
         minHeight: "100vh",
@@ -28,17 +28,17 @@ export default function Frame({ children }: { children: ReactNode }) {
           position: "absolute",
           inset: 0,
           pointerEvents: "none",
-          backgroundImage: "radial-gradient(rgba(180,164,200,.08) 1px,transparent 1px)",
+          backgroundImage: "radial-gradient(rgba(150,160,168,.08) 1px,transparent 1px)",
           backgroundSize: "30px 30px",
           zIndex: 0,
         }}
       />
 
       {/* corner crosshairs */}
-      <div style={{ position: "fixed", top: 14, left: 14, width: 14, height: 14, borderLeft: "1px solid rgba(233,226,211,.38)", borderTop: "1px solid rgba(233,226,211,.38)", zIndex: 40, pointerEvents: "none" }} />
-      <div style={{ position: "fixed", top: 14, right: 14, width: 14, height: 14, borderRight: "1px solid rgba(233,226,211,.38)", borderTop: "1px solid rgba(233,226,211,.38)", zIndex: 40, pointerEvents: "none" }} />
-      <div style={{ position: "fixed", bottom: 14, left: 14, width: 14, height: 14, borderLeft: "1px solid rgba(233,226,211,.38)", borderBottom: "1px solid rgba(233,226,211,.38)", zIndex: 40, pointerEvents: "none" }} />
-      <div style={{ position: "fixed", bottom: 14, right: 14, width: 14, height: 14, borderRight: "1px solid rgba(233,226,211,.38)", borderBottom: "1px solid rgba(233,226,211,.38)", zIndex: 40, pointerEvents: "none" }} />
+      <div style={{ position: "fixed", top: 14, left: 14, width: 14, height: 14, borderLeft: "1px solid rgba(230,230,226,.38)", borderTop: "1px solid rgba(230,230,226,.38)", zIndex: 40, pointerEvents: "none" }} />
+      <div style={{ position: "fixed", top: 14, right: 14, width: 14, height: 14, borderRight: "1px solid rgba(230,230,226,.38)", borderTop: "1px solid rgba(230,230,226,.38)", zIndex: 40, pointerEvents: "none" }} />
+      <div style={{ position: "fixed", bottom: 14, left: 14, width: 14, height: 14, borderLeft: "1px solid rgba(230,230,226,.38)", borderBottom: "1px solid rgba(230,230,226,.38)", zIndex: 40, pointerEvents: "none" }} />
+      <div style={{ position: "fixed", bottom: 14, right: 14, width: 14, height: 14, borderRight: "1px solid rgba(230,230,226,.38)", borderBottom: "1px solid rgba(230,230,226,.38)", zIndex: 40, pointerEvents: "none" }} />
 
       {/* scroll progress */}
       <div
@@ -49,10 +49,10 @@ export default function Frame({ children }: { children: ReactNode }) {
           left: 0,
           height: 2,
           width: "0%",
-          background: "linear-gradient(90deg,#7c5fa6,#c4a9e0)",
+          background: "linear-gradient(90deg,#54636d,#b79ae6)",
           zIndex: 50,
           pointerEvents: "none",
-          boxShadow: "0 0 12px rgba(196,169,224,.6)",
+          boxShadow: "0 0 12px rgba(183,154,230,.6)",
           transition: "width .12s linear",
         }}
       />

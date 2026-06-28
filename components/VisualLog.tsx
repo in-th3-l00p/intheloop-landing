@@ -53,9 +53,9 @@ export default function VisualLog() {
     <div className="il-px" style={{ padding: "84px 40px 40px", maxWidth: 1320, margin: "0 auto", paddingTop: 40 }}>
       <div
         data-reveal=""
-        style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#9a8ea4", borderBottom: "1px solid rgba(233,226,211,.15)", paddingBottom: 14, marginBottom: 34 }}
+        style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#97a0a7", borderBottom: "1px solid rgba(230,230,226,.15)", paddingBottom: 14, marginBottom: 34 }}
       >
-        <span><span style={{ color: "#a585cf" }}>✠</span>&nbsp; Visual Log</span>
+        <span><span style={{ color: "#9a78cf" }}>✠</span>&nbsp; Visual Log</span>
       </div>
       <div
         ref={gridRef}
@@ -68,10 +68,10 @@ export default function VisualLog() {
             data-pcell=""
             data-reveal=""
             className="il-plate"
-            style={{ position: "relative", overflow: "hidden", border: "1px solid rgba(233,226,211,.16)", backgroundColor: "#15101c", transition: "filter .8s ease" }}
+            style={{ position: "relative", overflow: "hidden", border: "1px solid rgba(230,230,226,.16)", backgroundColor: "#15181b", filter: "grayscale(.85) brightness(.85) contrast(1.05)", transition: "filter .8s ease" }}
           >
-            <span style={{ position: "absolute", top: 10, left: 11, width: 9, height: 9, borderLeft: "1px solid rgba(233,226,211,.3)", borderTop: "1px solid rgba(233,226,211,.3)", pointerEvents: "none", zIndex: 2 }} />
-            <span style={{ position: "absolute", bottom: 10, right: 11, width: 9, height: 9, borderRight: "1px solid rgba(233,226,211,.3)", borderBottom: "1px solid rgba(233,226,211,.3)", pointerEvents: "none", zIndex: 2 }} />
+            <span style={{ position: "absolute", top: 10, left: 11, width: 9, height: 9, borderLeft: "1px solid rgba(230,230,226,.3)", borderTop: "1px solid rgba(230,230,226,.3)", pointerEvents: "none", zIndex: 2 }} />
+            <span style={{ position: "absolute", bottom: 10, right: 11, width: 9, height: 9, borderRight: "1px solid rgba(230,230,226,.3)", borderBottom: "1px solid rgba(230,230,226,.3)", pointerEvents: "none", zIndex: 2 }} />
           </div>
         ))}
       </div>
