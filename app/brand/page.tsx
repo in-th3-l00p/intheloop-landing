@@ -29,7 +29,7 @@ const COLORS = [
 const VOICE = [
   { n: "01", t: "State, don’t sell", d: "Plain declaratives. No hype, no exclamation, no superlatives." },
   { n: "02", t: "Exact over clever", d: "Precise technical nouns. Say what the work is, not what it disrupts." },
-  { n: "03", t: "Quiet authority", d: "Confidence through restraint. We work by referral; we don’t announce." },
+  { n: "03", t: "Quiet authority", d: "Confidence through restraint. We let the work speak for itself." },
 ];
 
 const sectionHead = (num: string, left: string, right: string) => (
@@ -75,7 +75,7 @@ export default function BrandBookPage() {
       <div style={{ maxWidth: 1320, margin: "0 auto", padding: "60px 40px" }}>
         {sectionHead("01", "The Mark", "Seal · Monogram")}
         <p style={{ fontSize: "clamp(22px,2.6vw,32px)", fontWeight: 400, lineHeight: 1.4, maxWidth: "30ch", marginTop: 34 }}>
-          The name is the idea: a closed loop. The <em style={{ fontStyle: "italic", color: "#c4a9e0" }}>il</em> monogram, drawn as a serif ligature, sits inside an engraved double ring: a seal for a studio that works by referral.
+          The name is the idea: a closed loop. The <em style={{ fontStyle: "italic", color: "#c4a9e0" }}>il</em> monogram, drawn as a serif ligature, sits inside an engraved double ring: a seal for a studio at the edge of research and craft.
         </p>
 
         {/* download cards */}
@@ -180,7 +180,7 @@ export default function BrandBookPage() {
             <div style={{ fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase", color: "#c4a9e0", marginBottom: 14 }}>Say</div>
             <div style={{ fontSize: 14, lineHeight: 1.9, color: "#cdbfe0" }}>
               &ldquo;We build software at the edge of research and craft.&rdquo;<br />
-              &ldquo;By invitation and referral.&rdquo;<br />
+              &ldquo;We work with anyone who needs our services.&rdquo;<br />
               &ldquo;Built quietly, until it is ready for light.&rdquo;
             </div>
           </div>
