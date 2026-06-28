@@ -44,10 +44,10 @@ export default function PortfolioTabs({ tabs }: { tabs: PortfolioTab[] }) {
           position: "sticky",
           top: 0,
           zIndex: 30,
-          background: "rgba(14,10,20,.82)",
+          background: "rgba(12,14,16,.82)",
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
-          borderBottom: "1px solid rgba(233,226,211,.15)",
+          borderBottom: "1px solid rgba(230,230,226,.15)",
         }}
       >
         <div
@@ -85,15 +85,15 @@ export default function PortfolioTabs({ tabs }: { tabs: PortfolioTab[] }) {
                   fontSize: 11,
                   letterSpacing: ".16em",
                   textTransform: "uppercase",
-                  color: on ? "#e9e2d3" : "#82749a",
-                  borderBottom: `2px solid ${on ? "#c4a9e0" : "transparent"}`,
+                  color: on ? "#e6e6e2" : "#79838b",
+                  borderBottom: `2px solid ${on ? "#aeb9bf" : "transparent"}`,
                   marginRight: 22,
                   transition: "color .4s ease, border-color .4s ease",
                 }}
                 className="il-tab"
               >
                 {t.label}
-                <span style={{ fontSize: 10, color: on ? "#a585cf" : "#6a5b7d" }}>{t.count}</span>
+                <span style={{ fontSize: 10, color: on ? "#7d8a92" : "#55606a" }}>{t.count}</span>
               </button>
             );
           })}

@@ -8,7 +8,7 @@ Read this first — it captures the things that are *not* obvious from the code 
 ## What this is
 
 The **intheloop** studio website — a faithful Next.js (App Router) implementation of the
-Claude Design project *Intheloop branding project*. Aesthetic: aubergine-and-ivory, quiet,
+Claude Design project *Intheloop branding project*. Aesthetic: graphite-and-ivory, quiet,
 old-money serif meets monospaced marginalia. Tagline: *Software at the edge of research and craft.*
 
 - **Location:** `/Users/intheloop/Desktop/intheloop-landing/`
@@ -48,16 +48,22 @@ The hero **scroll indicator was removed** by request — do not reintroduce it.
 
 ## Design language
 
-**Palette:**
+**Palette** — *Graphite & Steel*. The studio reads as quiet engineering and craft,
+not play; the accent is a cool steel, never lilac. Keep it near-monochrome.
 
 | Token        | Hex       | Use |
 |--------------|-----------|-----|
-| Void/ground  | `#0e0a14` | page background, theme color |
-| Panel/surface| `#15101c` | cards, tiles |
-| Deep Violet  | `#6C4F93` | structural accents, dot-grid |
-| Amethyst     | `#a585cf` | rules, marks, mono accents |
-| Soft Lilac   | `#c4a9e0` | italic highlight (the accent color) |
-| Ivory/type   | `#e9e2d3` | primary text |
+| Graphite/ground | `#0c0e10` | page background, theme color |
+| Panel/surface   | `#15181b` | cards, tiles |
+| Slate           | `#3f4a52` | structural accents, dot-grid |
+| Cool Steel      | `#7d8a92` | rules, marks, mono accents |
+| Pale Steel      | `#aeb9bf` | italic highlight (the accent color) |
+| Cool Ivory/type | `#e6e6e2` | primary text |
+
+> The body greys are deliberately cool/neutral (e.g. `#97a0a7`, `#79838b`, `#b4b9bf`) —
+> de-purpled. Don't reintroduce mauve-tinted greys or any saturated violet.
+> **Was an aubergine/lilac scheme** (`#6C4F93` / `#a585cf` / `#c4a9e0` on `#0e0a14`);
+> migrated to graphite + steel for a more grown-up, less playful read.
 
 **Fonts** (via `next/font/google`, wired as CSS variables in `app/layout.tsx`, stacks in
 `components/tokens.ts`):
@@ -74,7 +80,7 @@ Match this style when adding UI — do not introduce a CSS framework.
 
 ## Shared components (`components/`)
 
-- `Frame.tsx` — page chrome: aubergine ground, ambient dot-grid, fixed corner crosshairs,
+- `Frame.tsx` — page chrome: graphite ground, ambient dot-grid, fixed corner crosshairs,
   scroll-progress bar, mounts `ScrollEffects`. Wrap every page in `<Frame>`.
 - `TopBar.tsx` — seal wordmark + optional breadcrumb trail (`crumbs={[{label, href?}]}`).
 - `ScrollEffects.tsx` — `"use client"`. Drives `[data-reveal]` (staggered reveal),
