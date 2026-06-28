@@ -20,9 +20,9 @@ const MARKS = [
 const COLORS = [
   { name: "Graphite", hex: "#0c0e10", swatch: "#0c0e10", role: "Ground" },
   { name: "Panel", hex: "#15181b", swatch: "#15181b", role: "Surface" },
-  { name: "Slate", hex: "#3f4a52", swatch: "#3f4a52", role: "Accent / deep" },
-  { name: "Cool Steel", hex: "#7d8a92", swatch: "#7d8a92", role: "Accent" },
-  { name: "Pale Steel", hex: "#aeb9bf", swatch: "#aeb9bf", role: "Highlight" },
+  { name: "Slate", hex: "#3f4a52", swatch: "#3f4a52", role: "Structure / deep" },
+  { name: "Amethyst", hex: "#9a78cf", swatch: "#9a78cf", role: "Accent" },
+  { name: "Soft Amethyst", hex: "#b79ae6", swatch: "#b79ae6", role: "Highlight" },
   { name: "Cool Ivory", hex: "#e6e6e2", swatch: "#e6e6e2", role: "Type / light" },
 ];
 
@@ -34,7 +34,7 @@ const VOICE = [
 
 const sectionHead = (num: string, left: string, right: string) => (
   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#97a0a7", borderBottom: "1px solid rgba(230,230,226,.15)", paddingBottom: 14 }}>
-    <span><span style={{ color: "#7d8a92" }}>{num}</span> &nbsp;{left}</span>
+    <span><span style={{ color: "#9a78cf" }}>{num}</span> &nbsp;{left}</span>
     <span>{right}</span>
   </div>
 );
@@ -53,7 +53,7 @@ export default function BrandBookPage() {
         <img src="/assets/il-seal.svg" alt="" style={{ width: 96, height: 96, display: "block", marginBottom: 40 }} />
         <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".24em", textTransform: "uppercase", color: "#97a0a7" }}>Identity Guidelines &nbsp;/&nbsp; Vol. 01</div>
         <h1 style={{ fontWeight: 400, fontSize: "clamp(56px,11vw,150px)", lineHeight: ".92", letterSpacing: "-.02em", marginTop: 24 }}>
-          The <em style={{ fontStyle: "italic", color: "#aeb9bf" }}>intheloop</em><br />brand book.
+          The <em style={{ fontStyle: "italic", color: "#b79ae6" }}>intheloop</em><br />brand book.
         </h1>
         <p style={{ fontFamily: MONO, fontSize: 13, lineHeight: 1.9, color: "#b4b9bf", maxWidth: "56ch", marginTop: 30 }}>
           A reference for the marks, type, colour and voice of intheloop, an independent software research &amp; development studio. Built quietly, in the dark, until it is ready for light.
@@ -65,7 +65,7 @@ export default function BrandBookPage() {
         <div className="il-grid-5" style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: 1, borderTop: "1px solid rgba(230,230,226,.15)", fontFamily: MONO, fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "#97a0a7" }}>
           {[["01", "Logo"], ["02", "Type"], ["03", "Colour"], ["04", "Voice"], ["05", "Motifs"]].map(([n, t]) => (
             <div key={n} style={{ padding: "16px 0", borderBottom: "1px solid rgba(230,230,226,.15)" }}>
-              <span style={{ color: "#7d8a92" }}>{n}</span> &nbsp;{t}
+              <span style={{ color: "#9a78cf" }}>{n}</span> &nbsp;{t}
             </div>
           ))}
         </div>
@@ -75,7 +75,7 @@ export default function BrandBookPage() {
       <div className="il-px" style={{ maxWidth: 1320, margin: "0 auto", padding: "60px 40px" }}>
         {sectionHead("01", "The Mark", "Seal · Monogram")}
         <p style={{ fontSize: "clamp(22px,2.6vw,32px)", fontWeight: 400, lineHeight: 1.4, maxWidth: "30ch", marginTop: 34 }}>
-          The name is the idea: a closed loop. The <em style={{ fontStyle: "italic", color: "#aeb9bf" }}>il</em> monogram, drawn as a serif ligature, sits inside an engraved double ring: a seal for a studio at the edge of research and craft.
+          The name is the idea: a closed loop. The <em style={{ fontStyle: "italic", color: "#b79ae6" }}>il</em> monogram, drawn as a serif ligature, sits inside an engraved double ring: a seal for a studio at the edge of research and craft.
         </p>
 
         {/* download cards */}
@@ -90,8 +90,8 @@ export default function BrandBookPage() {
                 <div style={{ fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "#e6e6e2" }}>{m.title}</div>
                 <div style={{ fontSize: 10, color: "#79838b", margin: "5px 0 12px" }}>{m.sub}</div>
                 <div style={{ display: "flex", gap: 8, fontSize: 10, letterSpacing: ".08em", textTransform: "uppercase" }}>
-                  <a href={m.svg} download style={{ flex: 1, textAlign: "center", padding: "7px 0", border: "1px solid rgba(174,185,191,.4)", color: "#aeb9bf", textDecoration: "none" }}>SVG</a>
-                  <a href={m.png} download style={{ flex: 1, textAlign: "center", padding: "7px 0", border: "1px solid rgba(174,185,191,.4)", color: "#aeb9bf", textDecoration: "none" }}>PNG</a>
+                  <a href={m.svg} download style={{ flex: 1, textAlign: "center", padding: "7px 0", border: "1px solid rgba(183,154,230,.4)", color: "#b79ae6", textDecoration: "none" }}>SVG</a>
+                  <a href={m.png} download style={{ flex: 1, textAlign: "center", padding: "7px 0", border: "1px solid rgba(183,154,230,.4)", color: "#b79ae6", textDecoration: "none" }}>PNG</a>
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function BrandBookPage() {
             ["Don't", "Recolour outside the palette, rotate, stretch, or add shadow to the mark."],
           ].map(([h, d]) => (
             <div key={h}>
-              <div style={{ fontSize: 11, color: "#7d8a92", marginBottom: 9 }}>{h}</div>
+              <div style={{ fontSize: 11, color: "#9a78cf", marginBottom: 9 }}>{h}</div>
               <div style={{ fontSize: 13, lineHeight: 1.7, color: "#b4b9bf" }}>{d}</div>
             </div>
           ))}
@@ -121,7 +121,7 @@ export default function BrandBookPage() {
             <span>Cormorant Garamond</span><span>Display · 300–600</span>
           </div>
           <div style={{ fontSize: "clamp(48px,8vw,104px)", fontWeight: 400, lineHeight: 1, letterSpacing: "-.01em", marginTop: 18 }}>
-            Software at the <em style={{ fontStyle: "italic", color: "#aeb9bf" }}>edge</em>.
+            Software at the <em style={{ fontStyle: "italic", color: "#b79ae6" }}>edge</em>.
           </div>
           <div style={{ fontFamily: MONO, fontSize: 12, color: "#79838b", marginTop: 18 }}>Headlines, statements, the wordmark. High-contrast, old-money serif. Set 300–400 weight, tight tracking.</div>
         </div>
@@ -138,14 +138,14 @@ export default function BrandBookPage() {
           <div style={{ display: "flex", justifyContent: "space-between", fontFamily: MONO, fontSize: 11, letterSpacing: ".12em", textTransform: "uppercase", color: "#97a0a7" }}>
             <span>UnifrakturCook</span><span>Ornament · 700</span>
           </div>
-          <div style={{ fontFamily: BLACKLETTER, fontSize: "clamp(46px,7vw,92px)", lineHeight: 1, marginTop: 14, color: "#aeb9bf" }}>intheloop</div>
+          <div style={{ fontFamily: BLACKLETTER, fontSize: "clamp(46px,7vw,92px)", lineHeight: 1, marginTop: 14, color: "#b79ae6" }}>intheloop</div>
           <div style={{ fontFamily: MONO, fontSize: 12, color: "#79838b", marginTop: 18 }}>Ornamental only: drop-initials, watermarks, the № mark. Never set body or whole words at small sizes.</div>
         </div>
       </div>
 
       {/* III · COLOUR */}
       <div className="il-px" style={{ maxWidth: 1320, margin: "0 auto", padding: "60px 40px" }}>
-        {sectionHead("03", "Colour", "Graphite & steel")}
+        {sectionHead("03", "Colour", "Graphite & amethyst")}
         <div className="il-grid-6" style={{ display: "grid", gridTemplateColumns: "repeat(6,1fr)", gap: 14, marginTop: 40 }}>
           {COLORS.map((c) => (
             <div key={c.name} style={{ border: "1px solid rgba(230,230,226,.14)" }}>
@@ -164,20 +164,20 @@ export default function BrandBookPage() {
       <div className="il-px" style={{ maxWidth: 1320, margin: "0 auto", padding: "60px 40px" }}>
         {sectionHead("04", "Brand Voice", "How we speak")}
         <p style={{ fontSize: "clamp(26px,3.6vw,46px)", fontWeight: 400, lineHeight: 1.32, maxWidth: "24ch", marginTop: 36 }}>
-          Quiet, exact, and a little austere. We state, we don&apos;t sell. <em style={{ fontStyle: "italic", color: "#aeb9bf" }}>Restraint is the tone.</em>
+          Quiet, exact, and a little austere. We state, we don&apos;t sell. <em style={{ fontStyle: "italic", color: "#b79ae6" }}>Restraint is the tone.</em>
         </p>
         <div className="il-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 28, marginTop: 56 }}>
           {VOICE.map((v) => (
             <div key={v.n} style={{ borderTop: "1px solid rgba(230,230,226,.15)", paddingTop: 20 }}>
-              <div style={{ fontFamily: MONO, fontSize: 11, color: "#7d8a92", marginBottom: 12 }}>{v.n}</div>
+              <div style={{ fontFamily: MONO, fontSize: 11, color: "#9a78cf", marginBottom: 12 }}>{v.n}</div>
               <div style={{ fontSize: 21, fontWeight: 500, lineHeight: 1.25 }}>{v.t}</div>
               <div style={{ fontFamily: MONO, fontSize: 12, lineHeight: 1.7, color: "#97a0a7", marginTop: 12 }}>{v.d}</div>
             </div>
           ))}
         </div>
         <div className="il-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28, marginTop: 48, fontFamily: MONO }}>
-          <div style={{ border: "1px solid rgba(174,185,191,.3)", padding: 22 }}>
-            <div style={{ fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase", color: "#aeb9bf", marginBottom: 14 }}>Say</div>
+          <div style={{ border: "1px solid rgba(183,154,230,.3)", padding: 22 }}>
+            <div style={{ fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase", color: "#b79ae6", marginBottom: 14 }}>Say</div>
             <div style={{ fontSize: 14, lineHeight: 1.9, color: "#c8cdd2" }}>
               &ldquo;We build software at the edge of research and craft.&rdquo;<br />
               &ldquo;We work with anyone who needs our services.&rdquo;<br />
@@ -203,11 +203,11 @@ export default function BrandBookPage() {
             <span style={{ fontFamily: MONO, fontSize: 10, letterSpacing: ".14em", textTransform: "uppercase", color: "#79838b", position: "absolute", bottom: 12, left: 12 }}>Dot grid</span>
           </div>
           <div style={{ aspectRatio: "1/1", border: "1px solid rgba(230,230,226,.16)", background: "#15181b", position: "relative" }}>
-            <span style={{ position: "absolute", top: 14, left: 14, width: 16, height: 16, borderLeft: "1px solid #aeb9bf", borderTop: "1px solid #aeb9bf" }} />
-            <span style={{ position: "absolute", bottom: 14, right: 14, width: 16, height: 16, borderRight: "1px solid #aeb9bf", borderBottom: "1px solid #aeb9bf" }} />
+            <span style={{ position: "absolute", top: 14, left: 14, width: 16, height: 16, borderLeft: "1px solid #b79ae6", borderTop: "1px solid #b79ae6" }} />
+            <span style={{ position: "absolute", bottom: 14, right: 14, width: 16, height: 16, borderRight: "1px solid #b79ae6", borderBottom: "1px solid #b79ae6" }} />
             <span style={{ fontFamily: MONO, fontSize: 10, letterSpacing: ".14em", textTransform: "uppercase", color: "#79838b", position: "absolute", bottom: 12, left: 12 }}>Crosshairs</span>
           </div>
-          <div style={{ aspectRatio: "1/1", border: "1px solid rgba(230,230,226,.16)", background: "#15181b", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", gap: 14, fontSize: 30, color: "#aeb9bf" }}>
+          <div style={{ aspectRatio: "1/1", border: "1px solid rgba(230,230,226,.16)", background: "#15181b", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", gap: 14, fontSize: 30, color: "#b79ae6" }}>
             ❧ ✠ ❦
             <span style={{ fontFamily: MONO, fontSize: 10, letterSpacing: ".14em", textTransform: "uppercase", color: "#79838b", position: "absolute", bottom: 12, left: 12 }}>Ornaments</span>
           </div>
@@ -220,7 +220,7 @@ export default function BrandBookPage() {
 
       {/* footer */}
       <div className="il-px il-footrow" style={{ maxWidth: 1320, margin: "40px auto 0", padding: 40, borderTop: "1px solid rgba(230,230,226,.15)", display: "flex", justifyContent: "space-between", fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#97a0a7" }}>
-        <span><span style={{ color: "#7d8a92" }}>[</span>intheloop<span style={{ color: "#7d8a92" }}>]</span> &nbsp; © 2026</span>
+        <span><span style={{ color: "#9a78cf" }}>[</span>intheloop<span style={{ color: "#9a78cf" }}>]</span> &nbsp; © 2026</span>
         <span>Brand Book / Vol. 01</span>
       </div>
     </Frame>

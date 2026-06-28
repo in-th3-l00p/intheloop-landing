@@ -43,7 +43,7 @@ export default async function LandingPage() {
         </div>
         <div className="il-px" style={{ position: "relative", zIndex: 2, maxWidth: 1320, margin: "0 auto", width: "100%", padding: "0 40px 15vh" }}>
           <div data-reveal="" style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".24em", textTransform: "uppercase", color: "#b4b9bf", display: "flex", gap: 16, alignItems: "center" }}>
-            <span style={{ width: 46, height: 1, background: "#7d8a92", display: "inline-block" }} />
+            <span style={{ width: 46, height: 1, background: "#9a78cf", display: "inline-block" }} />
             {home.heroEyebrow}
           </div>
           <h1 data-reveal="" style={{ fontWeight: 400, fontSize: "clamp(52px,8.6vw,138px)", lineHeight: ".95", letterSpacing: "-.015em", marginTop: 28, maxWidth: "15ch", textShadow: "0 2px 40px rgba(12,14,16,.6)" }}>
@@ -58,7 +58,7 @@ export default async function LandingPage() {
       {/* ABOUT */}
       <div id="about" className="il-px il-secpad" style={{ position: "relative", padding: "130px 40px 96px", maxWidth: 1320, margin: "0 auto", scrollMarginTop: 40 }}>
         <div data-reveal="" style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#97a0a7", borderBottom: "1px solid rgba(230,230,226,.15)", paddingBottom: 14 }}>
-          <span><span style={{ color: "#7d8a92" }}>❦</span>&nbsp; {home.aboutLabel}</span>
+          <span><span style={{ color: "#9a78cf" }}>❦</span>&nbsp; {home.aboutLabel}</span>
           <span>{home.aboutNumber}</span>
         </div>
 
@@ -72,7 +72,7 @@ export default async function LandingPage() {
             </p>
             <p data-reveal="" style={{ fontFamily: MONO, fontSize: 13, lineHeight: 2, color: "#c2c6cb", maxWidth: "52ch", marginTop: 22 }}>
               Curious what&apos;s happening intheloop? The{" "}
-              <Link href="/publishings" className="il-navlink" style={{ color: "#aeb9bf", textDecoration: "none" }}>publishings page</Link>{" "}
+              <Link href="/publishings" className="il-navlink" style={{ color: "#b79ae6", textDecoration: "none" }}>publishings page</Link>{" "}
               gathers our case studies and articles, everything we&apos;re thinking through in the open.
             </p>
           </div>
@@ -99,11 +99,11 @@ export default async function LandingPage() {
             <span style={{ position: "absolute", bottom: 14, right: 15, width: 11, height: 11, borderRight: "1px solid rgba(230,230,226,.34)", borderBottom: "1px solid rgba(230,230,226,.34)" }} />
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", fontFamily: MONO, fontSize: 11, letterSpacing: ".16em", textTransform: "uppercase", color: "#97a0a7" }}>
               <span>→ 01 / Index</span>
-              <span style={{ color: "#7d8a92" }}>{workCount} works</span>
+              <span style={{ color: "#9a78cf" }}>{workCount} works</span>
             </div>
             <div>
               <div style={{ fontSize: "clamp(38px,4.4vw,60px)", fontWeight: 400, letterSpacing: "-.015em", lineHeight: 1 }}>Publishings</div>
-              <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: ".06em", color: "#b4b9bf", marginTop: 14, display: "flex", alignItems: "center", gap: 10 }}>Projects, case studies &amp; articles <span style={{ color: "#aeb9bf", fontSize: 15 }}>↗</span></div>
+              <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: ".06em", color: "#b4b9bf", marginTop: 14, display: "flex", alignItems: "center", gap: 10 }}>Projects, case studies &amp; articles <span style={{ color: "#b79ae6", fontSize: 15 }}>↗</span></div>
             </div>
           </Link>
           <Link href="/brand" data-reveal="" className="il-card" style={{ position: "relative", textDecoration: "none", color: "inherit", border: "1px solid rgba(230,230,226,.16)", background: "#15181b", overflow: "hidden", padding: "40px 38px 34px", minHeight: 262, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
@@ -113,11 +113,11 @@ export default async function LandingPage() {
             <img src="/assets/il-seal.svg" alt="" style={{ position: "absolute", right: -26, bottom: -26, width: 170, opacity: 0.07 }} />
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", fontFamily: MONO, fontSize: 11, letterSpacing: ".16em", textTransform: "uppercase", color: "#97a0a7" }}>
               <span>→ 02 / Identity</span>
-              <span style={{ color: "#7d8a92" }}>Vol. 01</span>
+              <span style={{ color: "#9a78cf" }}>Vol. 01</span>
             </div>
             <div>
               <div style={{ fontSize: "clamp(38px,4.4vw,60px)", fontWeight: 400, letterSpacing: "-.015em", lineHeight: 1 }}>Brand Book</div>
-              <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: ".06em", color: "#b4b9bf", marginTop: 14, display: "flex", alignItems: "center", gap: 10 }}>Marks, type, colour &amp; voice <span style={{ color: "#aeb9bf", fontSize: 15 }}>↗</span></div>
+              <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: ".06em", color: "#b4b9bf", marginTop: 14, display: "flex", alignItems: "center", gap: 10 }}>Marks, type, colour &amp; voice <span style={{ color: "#b79ae6", fontSize: 15 }}>↗</span></div>
             </div>
           </Link>
         </div>
@@ -128,7 +128,7 @@ export default async function LandingPage() {
         <div data-parallax="0.08" style={{ position: "absolute", left: "-5%", top: "-18%", width: "110%", height: "136%", background: "#0c0e10 url('/uploads/galaxy.png') center/cover no-repeat", filter: "grayscale(.5) saturate(.62) brightness(.9) contrast(1.04)", animation: "kenburns 50s ease-in-out infinite alternate" }} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(95% 130% at 50% 50%,rgba(12,14,16,.18),rgba(12,14,16,.74))" }} />
         <div data-reveal="" className="il-px" style={{ position: "relative", padding: "118px 40px", maxWidth: 1320, margin: "0 auto", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "24px 52px" }}>
-          <span style={{ fontFamily: BLACKLETTER, fontSize: 88, color: "#aeb9bf", lineHeight: ".8" }}>A</span>
+          <span style={{ fontFamily: BLACKLETTER, fontSize: 88, color: "#b79ae6", lineHeight: ".8" }}>A</span>
           <div style={{ fontSize: "clamp(26px,3vw,44px)", fontWeight: 400, letterSpacing: "-.005em", maxWidth: "22ch", fontStyle: "italic", color: "#e6e6e2" }}>{accent(home.bandQuote)}</div>
         </div>
       </div>
@@ -156,7 +156,7 @@ export default async function LandingPage() {
         </div>
         <div className="il-footrow" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 88, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#97a0a7" }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
-            <span style={{ letterSpacing: "-.01em" }}><span style={{ color: "#7d8a92" }}>[</span>{settings.studioName}<span style={{ color: "#7d8a92" }}>]</span></span>
+            <span style={{ letterSpacing: "-.01em" }}><span style={{ color: "#9a78cf" }}>[</span>{settings.studioName}<span style={{ color: "#9a78cf" }}>]</span></span>
             <span style={{ color: "#79838b" }}>© {settings.copyrightYear}</span>
           </span>
           <span>{settings.footerTagline}</span>

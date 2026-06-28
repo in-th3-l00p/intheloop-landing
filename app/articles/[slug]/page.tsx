@@ -66,7 +66,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
           <span style={{ display: "inline-block", fontFamily: BLACKLETTER, fontSize: "clamp(130px,16vw,240px)", lineHeight: 1, color: "rgba(96,110,120,.08)", animation: "floaty 11s ease-in-out infinite" }}>¶</span>
         </div>
         <div data-reveal="" style={{ position: "relative", fontFamily: MONO, fontSize: 11, letterSpacing: ".24em", textTransform: "uppercase", color: "#b4b9bf", display: "flex", gap: 16, alignItems: "center" }}>
-          <span style={{ width: 46, height: 1, background: "#7d8a92", display: "inline-block" }} />
+          <span style={{ width: 46, height: 1, background: "#9a78cf", display: "inline-block" }} />
           {article.kind} &nbsp;/&nbsp; № {article.number}
         </div>
         <h1 data-reveal="" style={{ position: "relative", fontWeight: 400, fontSize: "clamp(40px,6.4vw,86px)", lineHeight: "1.02", letterSpacing: "-.02em", marginTop: 24, maxWidth: "18ch" }}>
@@ -106,7 +106,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
             <Link href={`/articles/${next.slug}`} data-reveal="" className="il-card" style={{ position: "relative", display: "flex", flexDirection: "column", justifyContent: "space-between", textDecoration: "none", color: "inherit", border: "1px solid rgba(230,230,226,.16)", background: "#15181b", overflow: "hidden", padding: "30px 30px 24px", minHeight: 156 }}>
               <div style={{ display: "flex", justifyContent: "space-between", fontFamily: MONO, fontSize: 11, letterSpacing: ".16em", textTransform: "uppercase", color: "#97a0a7" }}>
                 <span>Next →</span>
-                <span style={{ color: "#7d8a92" }}>№ {next.number}</span>
+                <span style={{ color: "#9a78cf" }}>№ {next.number}</span>
               </div>
               <div>
                 <div style={{ fontSize: "clamp(26px,3vw,38px)", fontWeight: 400, letterSpacing: "-.015em", lineHeight: 1.04 }}>{next.title}</div>
@@ -125,7 +125,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
         </div>
         <div className="il-footrow" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 56, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#97a0a7" }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
-            <span><span style={{ color: "#7d8a92" }}>[</span>{settings.studioName}<span style={{ color: "#7d8a92" }}>]</span></span>
+            <span><span style={{ color: "#9a78cf" }}>[</span>{settings.studioName}<span style={{ color: "#9a78cf" }}>]</span></span>
             <span style={{ color: "#79838b" }}>© {settings.copyrightYear}</span>
           </span>
           <span>{settings.footerTagline}</span>
@@ -135,7 +135,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
   );
 }
 
-// Renders one body block. Paragraphs and quotes honour the *asterisk* steel accent.
+// Renders one body block. Paragraphs and quotes honour the *asterisk* amethyst accent.
 function Block({ type, text }: { type: string; text: string }) {
   if (type === "heading") {
     return (

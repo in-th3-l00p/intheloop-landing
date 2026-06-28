@@ -48,22 +48,27 @@ The hero **scroll indicator was removed** by request — do not reintroduce it.
 
 ## Design language
 
-**Palette** — *Graphite & Steel*. The studio reads as quiet engineering and craft,
-not play; the accent is a cool steel, never lilac. Keep it near-monochrome.
+**Palette** — *Graphite & Amethyst*. A cool graphite/steel **foundation** with a
+refined jewel **amethyst accent**. The structure (grounds, surfaces, body greys,
+slate, dot-grid, watermark) stays near-monochrome and cool; only the *accent tier*
+is purple — that keeps it grown-up, not the candy-lilac that read childish before.
 
 | Token        | Hex       | Use |
 |--------------|-----------|-----|
 | Graphite/ground | `#0c0e10` | page background, theme color |
 | Panel/surface   | `#15181b` | cards, tiles |
-| Slate           | `#3f4a52` | structural accents, dot-grid |
-| Cool Steel      | `#7d8a92` | rules, marks, mono accents |
-| Pale Steel      | `#aeb9bf` | italic highlight (the accent color) |
+| Slate           | `#3f4a52` | structural deep, dot-grid, watermark (stays cool) |
+| Amethyst        | `#9a78cf` | rules, marks, mono accents (the purple accent) |
+| Soft Amethyst   | `#b79ae6` | italic highlight (the accent color) |
 | Cool Ivory/type | `#e6e6e2` | primary text |
 
-> The body greys are deliberately cool/neutral (e.g. `#97a0a7`, `#79838b`, `#b4b9bf`) —
-> de-purpled. Don't reintroduce mauve-tinted greys or any saturated violet.
-> **Was an aubergine/lilac scheme** (`#6C4F93` / `#a585cf` / `#c4a9e0` on `#0e0a14`);
-> migrated to graphite + steel for a more grown-up, less playful read.
+> Purple lives **only on the accent tier** (marks + highlight). The body greys
+> (`#97a0a7`, `#79838b`, `#b4b9bf`), surfaces, dot-grid and the big "il" watermark
+> stay cool steel — don't tint those purple, or the page slides back to "purple
+> everywhere". The accent amethyst is a richer, slightly bluer jewel tone than the
+> old pastel lilac (`#c4a9e0`), which is what read childish. **Photos stay cool:**
+> the galaxy band is desaturated and the visual-log plates are archival silver that
+> bloom to colour on hover.
 
 **Fonts** (via `next/font/google`, wired as CSS variables in `app/layout.tsx`, stacks in
 `components/tokens.ts`):

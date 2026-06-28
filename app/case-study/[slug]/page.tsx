@@ -64,7 +64,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
           <span style={{ display: "inline-block", fontFamily: BLACKLETTER, fontSize: "clamp(140px,18vw,280px)", lineHeight: 1, color: "rgba(96,110,120,.09)", animation: "floaty 11s ease-in-out infinite" }}>i</span>
         </div>
         <div data-reveal="" style={{ position: "relative", fontFamily: MONO, fontSize: 11, letterSpacing: ".24em", textTransform: "uppercase", color: "#b4b9bf", display: "flex", gap: 16, alignItems: "center" }}>
-          <span style={{ width: 46, height: 1, background: "#7d8a92", display: "inline-block" }} />
+          <span style={{ width: 46, height: 1, background: "#9a78cf", display: "inline-block" }} />
           {cs.eyebrow}
         </div>
         <h1 data-reveal="" style={{ position: "relative", fontWeight: 400, fontSize: "clamp(48px,8vw,116px)", lineHeight: ".96", letterSpacing: "-.02em", marginTop: 26, maxWidth: "16ch" }}>
@@ -94,7 +94,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
           <span style={{ position: "absolute", bottom: 14, right: 15, width: 13, height: 13, borderRight: "1px solid rgba(230,230,226,.42)", borderBottom: "1px solid rgba(230,230,226,.42)" }} />
           <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 22 }}>
             <div className="il-play" style={{ width: 92, height: 92, borderRadius: "50%", border: "1px solid rgba(230,230,226,.4)", display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(12,14,16,.35)" }}>
-              <span style={{ width: 0, height: 0, borderLeft: "20px solid #aeb9bf", borderTop: "12px solid transparent", borderBottom: "12px solid transparent", marginLeft: 6 }} />
+              <span style={{ width: 0, height: 0, borderLeft: "20px solid #b79ae6", borderTop: "12px solid transparent", borderBottom: "12px solid transparent", marginLeft: 6 }} />
             </div>
             <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#97a0a7" }}>video / case film · 03:42</div>
           </div>
@@ -119,7 +119,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
       {/* PULL QUOTE */}
       <div className="il-px" style={{ padding: "96px 40px", maxWidth: 1320, margin: "0 auto" }}>
         <blockquote data-reveal="" style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-start", gap: "24px 40px", borderTop: "1px solid rgba(230,230,226,.15)", borderBottom: "1px solid rgba(230,230,226,.15)", padding: "72px 0" }}>
-          <span style={{ fontFamily: BLACKLETTER, fontSize: 88, color: "#aeb9bf", lineHeight: ".7" }}>&ldquo;</span>
+          <span style={{ fontFamily: BLACKLETTER, fontSize: 88, color: "#b79ae6", lineHeight: ".7" }}>&ldquo;</span>
           <div style={{ fontSize: "clamp(26px,3.2vw,46px)", fontStyle: "italic", fontWeight: 400, lineHeight: 1.32, letterSpacing: "-.005em", maxWidth: "24ch", color: "#e6e6e2" }}>{cs.quote}</div>
         </blockquote>
       </div>
@@ -150,7 +150,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
         <div style={{ marginTop: 34, display: "flex", flexDirection: "column", gap: 1, borderTop: "1px solid rgba(230,230,226,.14)" }}>
           {cs.approach.map((step) => (
             <div key={step.number} data-reveal="" style={{ display: "grid", gridTemplateColumns: "54px 1fr", gap: 20, padding: "24px 0", borderBottom: "1px solid rgba(230,230,226,.12)" }}>
-              <div style={{ fontFamily: MONO, fontSize: 12, color: "#7d8a92" }}>{step.number}</div>
+              <div style={{ fontFamily: MONO, fontSize: 12, color: "#9a78cf" }}>{step.number}</div>
               <div>
                 <div style={{ fontSize: 22 }}>{step.title}</div>
                 <div style={{ fontSize: 16, lineHeight: 1.7, color: "#97a0a7", marginTop: 6 }}>{step.body}</div>
@@ -166,7 +166,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
         <div data-reveal="" className="il-grid-2" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 1, marginTop: 44, borderTop: "1px solid rgba(230,230,226,.15)" }}>
           {cs.stats.map((s) => (
             <div key={s.label} style={{ padding: "28px 0", borderBottom: "1px solid rgba(230,230,226,.12)" }}>
-              <div style={{ fontSize: "clamp(40px,5vw,68px)", fontWeight: 400, letterSpacing: "-.02em", color: "#aeb9bf" }}>{s.value}</div>
+              <div style={{ fontSize: "clamp(40px,5vw,68px)", fontWeight: 400, letterSpacing: "-.02em", color: "#b79ae6" }}>{s.value}</div>
               <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".12em", textTransform: "uppercase", color: "#79838b", marginTop: 8 }}>{s.label}</div>
             </div>
           ))}
@@ -187,7 +187,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
           <Link href={next ? `/case-study/${next.slug}` : "/publishings#articles"} data-reveal="" className="il-card" style={{ position: "relative", display: "flex", flexDirection: "column", justifyContent: "space-between", textDecoration: "none", color: "inherit", border: "1px solid rgba(230,230,226,.16)", background: "#15181b", overflow: "hidden", padding: "34px 34px 28px", minHeight: 172 }}>
             <div style={{ display: "flex", justifyContent: "space-between", fontFamily: MONO, fontSize: 11, letterSpacing: ".16em", textTransform: "uppercase", color: "#97a0a7" }}>
               <span>Next →</span>
-              <span style={{ color: "#7d8a92" }}>{next ? `№ ${next.number}` : "Writing"}</span>
+              <span style={{ color: "#9a78cf" }}>{next ? `№ ${next.number}` : "Writing"}</span>
             </div>
             <div>
               <div style={{ fontSize: "clamp(30px,3.4vw,44px)", fontWeight: 400, letterSpacing: "-.015em", lineHeight: 1 }}>{next ? next.title : "Articles"}</div>
@@ -197,7 +197,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
         </div>
         <div className="il-footrow" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 64, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#97a0a7" }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
-            <span><span style={{ color: "#7d8a92" }}>[</span>{settings.studioName}<span style={{ color: "#7d8a92" }}>]</span></span>
+            <span><span style={{ color: "#9a78cf" }}>[</span>{settings.studioName}<span style={{ color: "#9a78cf" }}>]</span></span>
             <span style={{ color: "#79838b" }}>© {settings.copyrightYear}</span>
           </span>
           <span>{settings.footerTagline}</span>
@@ -223,7 +223,7 @@ function Section({
     <div className="il-px" style={{ padding: topBorder ? "104px 40px 0" : "0 40px", maxWidth: 1320, margin: "0 auto" }}>
       <div className="il-stack-side" style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 48 }}>
         <div data-reveal="" style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#97a0a7" }}>
-          <span style={{ color: "#7d8a92" }}>{number}</span>
+          <span style={{ color: "#9a78cf" }}>{number}</span>
           <br />
           {label}
         </div>

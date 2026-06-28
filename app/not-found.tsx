@@ -20,12 +20,12 @@ export default function NotFound() {
         </div>
 
         <div data-reveal="" style={{ position: "relative", fontFamily: MONO, fontSize: 11, letterSpacing: ".24em", textTransform: "uppercase", color: "#b4b9bf", display: "flex", gap: 16, alignItems: "center" }}>
-          <span style={{ width: 46, height: 1, background: "#7d8a92", display: "inline-block" }} />
+          <span style={{ width: 46, height: 1, background: "#9a78cf", display: "inline-block" }} />
           Error &nbsp;/&nbsp; № 404 · Off the index
         </div>
 
         <h1 data-reveal="" style={{ position: "relative", fontWeight: 400, fontSize: "clamp(48px,8vw,116px)", lineHeight: ".96", letterSpacing: "-.02em", marginTop: 26, maxWidth: "16ch" }}>
-          This page is <em style={{ fontStyle: "italic", fontWeight: 400, color: "#aeb9bf" }}>not in the loop.</em>
+          This page is <em style={{ fontStyle: "italic", fontWeight: 400, color: "#b79ae6" }}>not in the loop.</em>
         </h1>
 
         <p data-reveal="" style={{ position: "relative", fontFamily: MONO, fontSize: 13, lineHeight: 1.9, color: "#c2c6cb", maxWidth: "52ch", marginTop: 28 }}>
@@ -33,13 +33,13 @@ export default function NotFound() {
         </p>
 
         <div data-reveal="" style={{ display: "flex", flexWrap: "wrap", gap: 14, marginTop: 44, fontFamily: MONO, fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase" }}>
-          <Link href="/" style={{ padding: "13px 22px", border: "1px solid rgba(174,185,191,.45)", color: "#aeb9bf", textDecoration: "none" }}>← Back home</Link>
+          <Link href="/" style={{ padding: "13px 22px", border: "1px solid rgba(183,154,230,.45)", color: "#b79ae6", textDecoration: "none" }}>← Back home</Link>
           <Link href="/publishings" className="il-navlink" style={{ padding: "13px 22px", border: "1px solid rgba(230,230,226,.18)", textDecoration: "none" }}>View publishings</Link>
         </div>
 
         <div className="il-footrow" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 96, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#97a0a7" }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
-            <span><span style={{ color: "#7d8a92" }}>[</span>intheloop<span style={{ color: "#7d8a92" }}>]</span></span>
+            <span><span style={{ color: "#9a78cf" }}>[</span>intheloop<span style={{ color: "#9a78cf" }}>]</span></span>
             <span style={{ color: "#79838b" }}>© 2026</span>
           </span>
           <span>Software Research &amp; Development</span>

@@ -68,7 +68,7 @@ export default async function PortfolioPage() {
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginTop: 15 }}>
                     <div style={{ fontSize: 27, fontWeight: 500, letterSpacing: "-.005em" }}>{p.title}</div>
-                    <div style={{ fontFamily: MONO, fontSize: 11, color: "#7d8a92" }}>{p.number}</div>
+                    <div style={{ fontFamily: MONO, fontSize: 11, color: "#9a78cf" }}>{p.number}</div>
                   </div>
                   <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".08em", textTransform: "uppercase", color: "#97a0a7", marginTop: 4 }}>{p.kind}</div>
                   {p.summary ? (
@@ -112,12 +112,12 @@ export default async function PortfolioPage() {
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontFamily: MONO, fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "#97a0a7", marginTop: 16 }}>
                   <span>{c.kind}</span>
-                  <span style={{ color: "#7d8a92" }}>№ {c.number}</span>
+                  <span style={{ color: "#9a78cf" }}>№ {c.number}</span>
                 </div>
                 <div style={{ fontSize: 30, fontWeight: 400, letterSpacing: "-.01em", lineHeight: 1.12, marginTop: 10, maxWidth: "20ch" }}>{c.title}</div>
                 <div style={{ fontFamily: MONO, fontSize: 12, lineHeight: 1.7, color: "#b4b9bf", marginTop: 10, maxWidth: "46ch" }}>{c.subtitle}</div>
                 <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#79838b", marginTop: 12, display: "flex", alignItems: "center", gap: 10 }}>
-                  {c.year} <span style={{ color: "#aeb9bf", fontSize: 14 }}>↗</span>
+                  {c.year} <span style={{ color: "#b79ae6", fontSize: 14 }}>↗</span>
                 </div>
               </Link>
             ))}
@@ -139,7 +139,7 @@ export default async function PortfolioPage() {
             {articles.map((a) => (
               <Link key={a.slug} href={`/articles/${a.slug}`} data-reveal="" className="il-row il-artrow" style={{ display: "grid", gridTemplateColumns: "160px 1fr auto", gap: 28, alignItems: "baseline", padding: "30px 8px", textDecoration: "none", color: "inherit", borderBottom: "1px solid rgba(230,230,226,.12)" }}>
                 <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "#97a0a7" }}>
-                  <span style={{ color: "#7d8a92" }}>№ {a.number}</span>
+                  <span style={{ color: "#9a78cf" }}>№ {a.number}</span>
                   <br />
                   {a.kind}
                 </div>
@@ -150,7 +150,7 @@ export default async function PortfolioPage() {
                 <div className="il-artmeta" style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#79838b", textAlign: "right", whiteSpace: "nowrap" }}>
                   {formatDate(a.date)}
                   {a.readingTime ? <><br />{a.readingTime}</> : null}
-                  <div style={{ color: "#aeb9bf", fontSize: 15, marginTop: 8 }}>↗</div>
+                  <div style={{ color: "#b79ae6", fontSize: 15, marginTop: 8 }}>↗</div>
                 </div>
               </Link>
             ))}
@@ -171,11 +171,11 @@ export default async function PortfolioPage() {
           <span style={{ display: "inline-block", fontFamily: BLACKLETTER, fontSize: "clamp(150px,20vw,300px)", lineHeight: 1, color: "rgba(96,110,120,.10)", animation: "floaty 11s ease-in-out infinite" }}>il</span>
         </div>
         <div data-reveal="" style={{ position: "relative", fontFamily: MONO, fontSize: 11, letterSpacing: ".24em", textTransform: "uppercase", color: "#b4b9bf", display: "flex", gap: 16, alignItems: "center" }}>
-          <span style={{ width: 46, height: 1, background: "#7d8a92", display: "inline-block" }} />
+          <span style={{ width: 46, height: 1, background: "#9a78cf", display: "inline-block" }} />
           Selected Work &nbsp;/&nbsp; № 001 · Index
         </div>
         <h1 data-reveal="" style={{ position: "relative", fontWeight: 400, fontSize: "clamp(52px,9vw,128px)", lineHeight: ".95", letterSpacing: "-.02em", marginTop: 26 }}>
-          Selected <em style={{ fontStyle: "italic", fontWeight: 400, color: "#aeb9bf" }}>work</em>.
+          Selected <em style={{ fontStyle: "italic", fontWeight: 400, color: "#b79ae6" }}>work</em>.
         </h1>
         <p data-reveal="" style={{ position: "relative", fontFamily: MONO, fontSize: 13, lineHeight: 1.9, color: "#c2c6cb", maxWidth: "56ch", marginTop: 28 }}>
           A working index of the studio&apos;s practice: projects, case studies and writing on distributed systems, applied research, interface craft and the quiet tooling in between.
@@ -198,7 +198,7 @@ export default async function PortfolioPage() {
         </Link>
         <div className="il-footrow" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 64, fontFamily: MONO, fontSize: 11, letterSpacing: ".06em", color: "#97a0a7" }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
-            <span><span style={{ color: "#7d8a92" }}>[</span>{settings.studioName}<span style={{ color: "#7d8a92" }}>]</span></span>
+            <span><span style={{ color: "#9a78cf" }}>[</span>{settings.studioName}<span style={{ color: "#9a78cf" }}>]</span></span>
             <span style={{ color: "#79838b" }}>© {settings.copyrightYear}</span>
           </span>
           <span>{settings.footerTagline}</span>
@@ -213,7 +213,7 @@ function Section({ icon, label, meta, children }: { icon: string; label: string;
   return (
     <div className="il-px" style={{ padding: "32px 40px 40px", maxWidth: 1320, margin: "0 auto" }}>
       <div data-reveal="" style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#97a0a7", borderBottom: "1px solid rgba(230,230,226,.15)", paddingBottom: 14 }}>
-        <span><span style={{ color: "#7d8a92" }}>{icon}</span> {label}</span>
+        <span><span style={{ color: "#9a78cf" }}>{icon}</span> {label}</span>
         <span>{meta}</span>
       </div>
       {children}
@@ -245,7 +245,7 @@ function EmptyState({ label, message }: { label: string; message: string }) {
       <span style={{ position: "absolute", top: 14, right: 15, width: 12, height: 12, borderRight: "1px solid rgba(230,230,226,.34)", borderTop: "1px solid rgba(230,230,226,.34)" }} />
       <span style={{ position: "absolute", bottom: 14, left: 15, width: 12, height: 12, borderLeft: "1px solid rgba(230,230,226,.34)", borderBottom: "1px solid rgba(230,230,226,.34)" }} />
       <span style={{ position: "absolute", bottom: 14, right: 15, width: 12, height: 12, borderRight: "1px solid rgba(230,230,226,.34)", borderBottom: "1px solid rgba(230,230,226,.34)" }} />
-      <span style={{ position: "relative", fontFamily: BLACKLETTER, fontSize: 72, lineHeight: 0.8, color: "#aeb9bf" }}>il</span>
+      <span style={{ position: "relative", fontFamily: BLACKLETTER, fontSize: 72, lineHeight: 0.8, color: "#b79ae6" }}>il</span>
       <div style={{ position: "relative", fontFamily: MONO, fontSize: 11, letterSpacing: ".2em", textTransform: "uppercase", color: "#97a0a7", marginTop: 26 }}>{label}</div>
       <p style={{ position: "relative", fontSize: 21, lineHeight: 1.5, fontStyle: "italic", color: "#c2c6cb", maxWidth: "38ch", marginTop: 12 }}>{message}</p>
     </div>

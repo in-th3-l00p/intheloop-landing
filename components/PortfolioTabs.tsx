@@ -86,14 +86,14 @@ export default function PortfolioTabs({ tabs }: { tabs: PortfolioTab[] }) {
                   letterSpacing: ".16em",
                   textTransform: "uppercase",
                   color: on ? "#e6e6e2" : "#79838b",
-                  borderBottom: `2px solid ${on ? "#aeb9bf" : "transparent"}`,
+                  borderBottom: `2px solid ${on ? "#b79ae6" : "transparent"}`,
                   marginRight: 22,
                   transition: "color .4s ease, border-color .4s ease",
                 }}
                 className="il-tab"
               >
                 {t.label}
-                <span style={{ fontSize: 10, color: on ? "#7d8a92" : "#55606a" }}>{t.count}</span>
+                <span style={{ fontSize: 10, color: on ? "#9a78cf" : "#55606a" }}>{t.count}</span>
               </button>
             );
           })}

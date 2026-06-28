@@ -55,7 +55,7 @@ export default function VisualLog() {
         data-reveal=""
         style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#97a0a7", borderBottom: "1px solid rgba(230,230,226,.15)", paddingBottom: 14, marginBottom: 34 }}
       >
-        <span><span style={{ color: "#7d8a92" }}>✠</span>&nbsp; Visual Log</span>
+        <span><span style={{ color: "#9a78cf" }}>✠</span>&nbsp; Visual Log</span>
       </div>
       <div
         ref={gridRef}

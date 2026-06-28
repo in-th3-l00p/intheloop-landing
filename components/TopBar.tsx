@@ -6,7 +6,7 @@ export type Crumb = { label: string; href?: string };
 
 /**
  * Top navigation bar: the seal wordmark plus an optional breadcrumb trail.
- * The final crumb (no href) renders as the active steel segment.
+ * The final crumb (no href) renders as the active amethyst segment.
  */
 export default function TopBar({ crumbs }: { crumbs?: Crumb[] }) {
   return (
@@ -27,7 +27,7 @@ export default function TopBar({ crumbs }: { crumbs?: Crumb[] }) {
                   {c.href ? (
                     <Link href={c.href} className="il-navlink">{c.label}</Link>
                   ) : (
-                    <span style={{ color: "#aeb9bf" }}>{c.label}</span>
+                    <span style={{ color: "#b79ae6" }}>{c.label}</span>
                   )}
                 </Fragment>
               ))}

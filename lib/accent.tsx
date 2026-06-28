@@ -1,9 +1,9 @@
 import { Fragment, type CSSProperties, type ReactNode } from "react";
 
-const ACCENT: CSSProperties = { fontStyle: "italic", fontWeight: 400, color: "#aeb9bf" };
+const ACCENT: CSSProperties = { fontStyle: "italic", fontWeight: 400, color: "#b79ae6" };
 
 /**
- * Renders editor copy with *asterisk-wrapped* words shown in the pale-steel italic
+ * Renders editor copy with *asterisk-wrapped* words shown in the amethyst italic
  * accent used throughout the site. Everything else is rendered as plain text.
  */
 export function accent(text: string, style: CSSProperties = ACCENT): ReactNode {

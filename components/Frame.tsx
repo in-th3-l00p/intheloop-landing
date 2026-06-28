@@ -49,10 +49,10 @@ export default function Frame({ children }: { children: ReactNode }) {
           left: 0,
           height: 2,
           width: "0%",
-          background: "linear-gradient(90deg,#54636d,#aeb9bf)",
+          background: "linear-gradient(90deg,#54636d,#b79ae6)",
           zIndex: 50,
           pointerEvents: "none",
-          boxShadow: "0 0 12px rgba(174,185,191,.6)",
+          boxShadow: "0 0 12px rgba(183,154,230,.6)",
           transition: "width .12s linear",
         }}
       />
