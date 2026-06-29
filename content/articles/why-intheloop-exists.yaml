@@ -1,0 +1,49 @@
+title: Why intheloop exists
+number: "001"
+kind: Statement
+date: "2026-06-29"
+readingTime: 4 min
+summary: Not a manifesto. A record of where things stand, and what we intend to do about it.
+body:
+  - type: heading
+    text: "I · The timeline is short"
+  - type: paragraph
+    text: "Pay attention to the dates. They are the whole argument."
+  - type: paragraph
+    text: "2017. One paper, *Attention Is All You Need*. The transformer. A footnote at the time. November 2022. ChatGPT ships, and reaches a hundred million users faster than any consumer product in history. The footnote is now infrastructure. March 2023. GPT-4 passes the exams that gate professions."
+  - type: paragraph
+    text: "Same window. Stable Diffusion takes image generation from lab to public tool in a single summer. DeepMind's AlphaFold solves protein structure, a fifty-year problem, then releases nearly every known structure to anyone who asks. Money moved on the same clock. Bitcoin: nine pages, 2008. Ethereum: a programmable settlement layer that swapped its entire consensus mechanism mid-flight in 2022, without stopping. Functions that required a central bank now run as code you can read line by line."
+  - type: quote
+    text: "What once needed a national lab now fits behind an API call. Or a *git clone*."
+  - type: heading
+    text: "II · Capability is cheap now"
+  - type: paragraph
+    text: "Note what this does to the barrier. It removes it. Open weights. Cheap inference. Public datasets. One person at a terminal can attempt what required an institution, a grant, and ten years. The production line for software is distributed. This is not a forecast. It already happened."
+  - type: paragraph
+    text: "There is a cost. Capability expires. The frontier moves monthly. State of the art in spring is obsolete by autumn. Under those conditions, research and development are not a budget line you defer. They are the price of staying operational. Read. Build. Break it. Build it again. Against a standard that will not hold still."
+  - type: paragraph
+    text: "That is the condition intheloop was built for. The name states the method: a closed loop between what is newly possible and what actually ships. Current by discipline. Not by luck."
+  - type: heading
+    text: "III · Open is the correct move"
+  - type: paragraph
+    text: "The record is clear on one point. The work that compounded was the work that was shared. The transformer was published, not locked in a vault. Linux runs the internet because no one owns it. Open weights converted a few labs' lead into a global field in months. Ethereum is valuable precisely because the code is public and the rules belong to everyone."
+  - type: quote
+    text: "Closed rots. Open compounds."
+  - type: paragraph
+    text: "Secret knowledge pays one company for one quarter. Released knowledge raises the floor permanently, and the floor remembers who raised it. Call it strategy, not charity, because that is what it is. Giving to the community is how trust accrues faster than secrecy allows, how standards move, how a small studio takes a seat at a table larger than itself. We publish the work, the research, and the tools. The community *is* the loop. Take from it. Improve it. Return more than you took."
+  - type: heading
+    text: "IV · What we work on"
+  - type: paragraph
+    text: "Two lines of work. No others."
+  - type: paragraph
+    text: "*The latest of AI.* Agentic systems, machine learning, optimization, at the live edge. Not last year's version. This month's. Systems that reason and act, not autocomplete. Retries, evaluation, and failure modes treated as the problem, not the cleanup. One question interests us: what can this be trusted to do, in production, unsupervised."
+  - type: paragraph
+    text: "*Decentralization, by default.* Coordination should not route through a single point of trust. So we build where the rules are legible, ownership is real, and no one holds the off-switch. Web3 is not decoration. It is a position on how systems should be governed, used only where it makes them more honest and harder to break."
+  - type: paragraph
+    text: "The intersection is the target. Intelligent systems that are open, verifiable, and owned by the people who run them."
+  - type: heading
+    text: "V · The loop is open"
+  - type: paragraph
+    text: "We work quietly. Usually by referral. We ship when the work is ready, not when a calendar demands it. Restraint is the method. Not modesty. Quiet is not closed. If the above reads as familiar, the loop is open. Read what we publish. Use what we release. Open an issue. Argue with us in public. Or send a note."
+  - type: paragraph
+    text: "We build software at the edge of research and craft, and we return it. That is the entire reason *intheloop* exists."
