@@ -85,18 +85,11 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
 
       {/* body */}
       <div className="il-px" style={{ maxWidth: 1320, margin: "0 auto", padding: "0 40px 40px" }}>
-        <div className="il-stack-side" style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 48 }}>
-          <div data-reveal="" style={{ fontFamily: MONO, fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: "#97a0a7" }}>
-            <span style={{ color: "#9a78cf" }}>№ {article.number}</span>
-            <br />
-            {article.kind}
-          </div>
-          <article style={{ maxWidth: "64ch" }}>
-            {article.body.map((block, i) => (
-              <Block key={i} type={block.type} text={block.text} />
-            ))}
-          </article>
-        </div>
+        <article style={{ maxWidth: "100%" }}>
+          {article.body.map((block, i) => (
+            <Block key={i} type={block.type} text={block.text} />
+          ))}
+        </article>
       </div>
 
       {/* footer */}
